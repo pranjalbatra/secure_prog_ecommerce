@@ -4,7 +4,8 @@
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
     "mongoose": "^7.3.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.4.5"
   },
   "name": "backend",
   "description": "Secure Programming Assignment 2 - Ecommerce\r This is the start of the README.\r Hello world!",
