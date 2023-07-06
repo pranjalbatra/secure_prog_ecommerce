@@ -1,0 +1,223 @@
+
+<div class="page">
+
+    <div class="page-header">
+        <div class="breadcrumb">
+            <p-breadcrumb [model]="breadcrumbs" [home]="homeBreadcrumb"></p-breadcrumb>
+        </div>
+        <div class="search">
+            <input pInputText type="text" (input)="filter(dt, $event)" placeholder="Search..." />           
+        </div>
+        <div class="actions">
+            <button pButton pRipple label="New" icon="pi pi-plus" class="button-action p-button-success p-mr-2" (click)="openNew()"></button>
+            <button pButton pRipple label="Delete" icon="pi pi-trash" class="button-action p-button-danger" (click)="deleteSelectedLocations()" [disabled]="!selectedLocations || !selectedLocations.length "></button>
+        </div> 
+    </div>
+
+    <div class="page-content">
+        <p-table #dt 
+            [value]="locations"                                                                                                      
+            [rows]="10" 
+            [paginator]="true" 
+            [globalFilterFields]="['position','qrcode','name','description','tags','status']"
+            [rowsPerPageOptions]="[5,10,25,50,100]"
+            [(selection)]="selectedLocations" 
+            [resizableColumns]="true"
+            [reorderableColumns]="true"
+            [rowHover]="true" 
+            dataKey="$key"
+            styleClass="p-datatable-striped"
+            currentPageReportTemplate="{first} to {last} of {totalRecords}" 
+            [showCurrentPageReport]="true"
+            selectionMode="multiple"
+            [columns]="selectedColumns"
+            (onRowReorder)="reorder($event)"
+            sortField="position" 
+            [sortOrder]="1"
+            >
+
+            <ng-template pTemplate="colgroup">
+                <colgroup>
+                    <col style="max-width:10%">
+                    <col style="max-width:20%">
+                    <col style="min-width:10%;max-width:80%">
+                    <col style="max-width:20%">
+                </colgroup>
+            </ng-template>
+            
+            <ng-template pTemplate="caption">
+                <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                selectedItemsLabel="{0} columns selected" [style]="{minWidth: '200px'}" placeholder="Choose Columns"></p-multiSelect>
+            </ng-template>
+
+            <ng-template pTemplate="header" let-columns="columns">
+                <tr>
+                    <th pResizableColumn pSortableColumn="position" style="width: 8rem">
+                        Order<p-sortIcon field="position"></p-sortIcon>
+                    </th>
+                    <th id="qrcode" style="width: 8rem" name="qrcode" pResizableColumn pReorderableColumn pSortableColumn="qrcode" [class]="includesCol('qrcode') ? 'd' : 'h'">QRCode 
+                        <p-sortIcon field="name"></p-sortIcon> 
+                        <p-columnFilter type="text" field="name" display="menu"></p-columnFilter> 
+                    </th>
+                    <th id="name" name="name" pResizableColumn pReorderableColumn pSortableColumn="name" [class]="includesCol('name') ? 'd' : 'h'">Name 
+                        <p-sortIcon field="name"></p-sortIcon> 
+                        <p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
+                    </th>
+                    <th id="description" name="description" pResizableColumn pReorderableColumn [class]="includesCol('description') ? 'd' : 'h'">Description
+                        <p-sortIcon field="description"></p-sortIcon> 
+                        <p-columnFilter type="text" field="description" display="menu"></p-columnFilter>
+                    </th>
+                    <th id="tags" name="tags" pResizableColumn pReorderableColumn [class]="includesCol('tags') ? 'd' : 'h'">Tags
+                        <p-sortIcon field="tags"></p-sortIcon> 
+                        <p-columnFilter type="text" field="tags" display="menu"></p-columnFilter>
+                    </th>
+                    <th id="isEnabled" name="isEnabled" pResizableColumn pReorderableColumn pSortableColumn="isEnabled" style="width: 10rem" [class]="includesCol('isEnabled') ? 'show' : 'hide'">
+                        Enabled
+                        <p-sortIcon field="isEnabled"></p-sortIcon> 
+                        <p-columnFilter type="boolean" field="isEnabled" display="menu"></p-columnFilter>
+                    </th>
+                    <th pResizableColumn pReorderableColumn style="width: 8rem">
+                        Actions 
+                        <!-- <button type="button" pButton pRipple icon="pi pi-file-o" (click)="dt.exportCSV();" class="p-mr-2" pTooltip="CSV" tooltipPosition="bottom"></button> -->
+                        <p-tableHeaderCheckbox style="float: right;margin-right:3px" class="checkbox"></p-tableHeaderCheckbox>
+                    </th>
+                    
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-location let-columns="columns" let-index="rowIndex">
+                <tr [pReorderableRow]="index" >
+                    <td pEditableColumn>
+                        <span *ngIf="isReordering && !isFilter" class="pi pi-bars" [pReorderableRowHandle]="index" style="margin-right: 1rem;"></span>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" 
+                                (ngModelChange)="modelChangeFn($event, location)"
+                                [ngModel]="location.position" 
+                                (blur)="completePosition(location)" 
+                                (keydown.tab)="completePosition(location)" 
+                                (keydown.enter)="completePosition(location)"  
+                                required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{index}}
+                                <!-- ( {{location.position}} ) -->
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td pEditableColumn [class]="includesCol('qrcode') ? 'd' : 'h'">
+                        <qrcode [qrdata]="location.name" [width]="100" [errorCorrectionLevel]="'M'"></qrcode>
+                    </td>
+
+                    <td pEditableColumn [class]="includesCol('name') ? 'd' : 'h'">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="location.name" 
+                                (blur)="completeLocation(location)" 
+                                (keydown.tab)="completeLocation(location)" 
+                                (keydown.enter)="completeLocation(location)" 
+                                 required>
+                            </ng-template>
+                            <ng-template pTemplate="output" >
+                                <span >{{location.name}}</span>
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td pEditableColumn [class]="includesCol('description') ? 'd' : 'h'" >
+                        <p-cellEditor >
+                            <ng-template pTemplate="input" >
+                                <input pInputText type="text" [(ngModel)]="location.description"  (blur)="completeLocation(location)" (keydown.tab)="completeLocation(location)" (keydown.enter)="completeLocation(location)"  required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                <span >{{location.description}}</span>
+                            
+                         
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td pEditableColumn [class]="includesCol('tags') ? 'd' : 'h'" >
+                        <p-cellEditor >
+                            <ng-template pTemplate="input" >
+                                <p-chips  id="tags" [(ngModel)]="location.tags" [separator]="separatorExp" placeholder="tag1, tag2 tag3" (onBlur)="completeLocation(location)" (onAdd)="completeLocation(location)" (onRemove)="completeLocation(location)"></p-chips>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                <span style="margin-right: 5px;" *ngFor="let tag of location.tags">
+                                    <p-tag >{{tag}}</p-tag>
+                                </span>
+                               
+                       
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td pEditableColumn [class]="includesCol('isEnabled') ? 'd' : 'h'" class="enabled" style="text-align: center;">
+                        <p-inputSwitch  [(ngModel)]="location.isEnabled" (onChange)="completeLocation(location)"></p-inputSwitch>
+                    </td>
+
+                    <td class="row-actions">
+                        <button style="margin-right: 10px" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editLocation(location)"></button>
+                        <button style="margin-right: 10px" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteLocation(location)"></button>
+                        <p-tableCheckbox class="checkbox" [value]="location"></p-tableCheckbox>
+                        
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="summary">
+                    <div class="summary-total">
+                        Total: {{locations ? locations.length : 0 }} location{{locations.length > 1? 's': ''}}
+                    </div>
+                    <div class="summary-export">
+                        <button style="margin-right: 10px"type="button" pButton pRipple icon="pi pi-file-o" (click)="exportToCsv()" class="p-mr-2" pTooltip="CSV - Save the selected lines and columns" tooltipPosition="bottom"></button>
+                        <button style="margin-right: 10px"type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success p-mr-2"  pTooltip="XLS - Save all the lines and columns" tooltipPosition="bottom"></button>
+                        <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning p-mr-2" pTooltip="PDF - Save all the lines and columns" tooltipPosition="bottom"></button>
+                    </div>
+                </div>
+            </ng-template>
+        </p-table>
+
+    </div>
+
+    <div class="page-footer">
+        <div class="p-d-flex">
+            <!-- <button type="button" pButton pRipple icon="pi pi-filter" (click)="dt.exportCSV({selectionOnly:true})" class="p-button-info p-ml-auto" pTooltip="Selection Only" tooltipPosition="bottom"></button> -->
+        </div>        
+    </div>
+
+    <!-- Dialog : confirm -->
+    <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    
+
+    <!-- Dialog : Popup -->
+    <p-dialog [(visible)]="locationDialog" [style]="{width: '450px', height: '450px'}" header="Location" [modal]="true" styleClass="p-fluid" [baseZIndex]='1000'>
+        <div class="p-field" style="margin-top: 10px;">
+            <label for="title">Name</label>
+            <input style="margin-top: 10px;" type="text" pInputText id="name" [(ngModel)]="location.name" required autofocus />
+            <small class="p-error" *ngIf="submitted && !location.name">Name is required.</small>
+        </div>
+        <div class="p-field">
+            <label for="description">Description</label>
+            <textarea style="margin-top: 10px;" id="description" pInputTextarea [(ngModel)]="location.description" rows="3" cols="20"></textarea>
+        </div>
+        <div class="p-field">
+            <label for="tags" >Tags</label>
+            <div style="height: 10px;">&nbsp;</div>
+            <p-chips  id="tags" [(ngModel)]="location.tags" [separator]="separatorExp" placeholder="tag1, tag2 tag3"></p-chips>
+        </div>   
+        <div class="in-out" style="margin-top: 20px;">
+            <button pButton pRipple label="Cancel" icon="pi pi-times" class="button-action p-button-danger p-mr-2" (click)="hideDialog()"></button>
+            <button pButton pRipple label="Save" icon="pi pi-check" class="button-action p-button-success" (click)="saveLocation()"></button>
+        </div>
+    </p-dialog>
+    
+    
+
+</div>
+
+
+
+
+
+
