@@ -71,6 +71,10 @@ app.put('/sche_1', (req, res) => {
     });
 });
 
+//change the sql query to node.js query like delete function and add validation in the 
+//put function that user id mandatory.
+//remove sql function
+//nvc structure
 
 
 //Router to DELETE a user's detail
