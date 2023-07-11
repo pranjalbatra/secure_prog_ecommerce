@@ -1,4 +1,4 @@
-CREATE DEFINER=`root`@`127.0.0.1` PROCEDURE `AddOrEdit`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AddOrEdit`(
 IN _user_id INT,
 IN _user_name VARCHAR(45),
 IN _user_email VARCHAR(100)

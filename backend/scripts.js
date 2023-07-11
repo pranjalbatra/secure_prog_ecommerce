@@ -24,7 +24,7 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => console.log(`Listening on port ${port}..`));
 
 
-app.get('/sche_1/:id' , (req, res) => {
+app.get('/sche_1' , (req, res) => {
 mysqlConnection.query('SELECT * FROM first_table', (err, rows, fields) => {
 if (!err)
 res.send(rows);
@@ -41,18 +41,45 @@ console.log(err);
 //Router to INSERT/POST a user's detail
 
 
-//problematic and needs fix
+app.post('/sche_1', (req, res) => {
+    let users = req.body;
+    var sql = "SET @user_id = ?;SET @user_name = ?;SET @user_email = ?; CALL AddOrEdit(@user_id,@user_name,@user_email);";
+    mysqlConnection.query(sql, [users.user_id, users.user_name, users.user_email], (err, rows, fields) => {
+        if (!err)
+            rows.forEach(element => {
+                if(element.constructor == Array)
+                res.send('New User ID : '+ element[0].user_id);
+            });
+        else
+            console.log(err);
+            res.status(500).send('Server error');
+    })
+});
 
-// app.post('/sche_1', (req, res) => {
-// let users = req.body;
-// var sql = "SET @user_id = ?;SET @user_name = ?;SET @user_email = ?; CALL AddOrEdit(@user_id,@user_name,@user_email);";
-// mysqlConnection.query(sql, [sche_1.user_id, sche_1.user_name, sche_1.user_email], (err, rows, fields) => {
-// if (!err)
-// rows.forEach(element => {
-// if(element.constructor == Array)
-// res.send('New User ID : '+ element[0].user_id);
-// });
-// else
-// console.log(err);
-// })
-// });
+
+//Router to UPDATE a user's detail
+app.put('/sche_1', (req, res) => {
+    let users = req.body;
+    var sql = "SET @user_id = ?;SET @user_name = ?;SET @user_email = ?;CALL AddOrEdit(@user_id,@user_name,@user_email);";
+    mysqlConnection.query(sql, [users.user_id, users.user_name, users.user_email], (err, rows, fields) => {
+        if (!err)
+            res.send('User Details Updated Successfully');
+        else {
+            console.log(err);
+            res.status(500).send(err.message); // send error response
+        }
+    });
+});
+
+
+
+//Router to DELETE a user's detail
+
+app.delete('/sche_1/:id', (req, res) => {
+    mysqlConnection.query('DELETE FROM first_table WHERE user_id = ?', [req.params.id], (err, rows, fields) => {
+    if (!err)
+        res.send('Record deleted successfully.');
+    else
+        console.log(err);
+    })
+    });
