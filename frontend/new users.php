@@ -56,7 +56,7 @@
 </head>
 <body>
   <h1>Create Account</h1>
-  <form>
+  <form method="post" action="create_account.php">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
     
