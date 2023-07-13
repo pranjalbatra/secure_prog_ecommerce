@@ -64,7 +64,7 @@
 </head>
 <body>
   <h1>Forgot Password</h1>
-  <form>
+  <form method="post" action="reset_password.php">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
     
