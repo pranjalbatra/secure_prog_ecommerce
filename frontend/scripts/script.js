@@ -37,9 +37,9 @@ function runSlideshow() {
   setTimeout(runSlideshow, 6000);
 }
 
-// 清除现有的定时器
+// Clear existing timers
 var existingTimer = setTimeout(runSlideshow, 6000);
-// 当页面被刷新或关闭时，清除定时器
+// Clear the timer when the page is refreshed or closed
 window.addEventListener("beforeunload", function() {
   clearTimeout(existingTimer);
 });
