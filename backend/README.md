@@ -22,11 +22,10 @@ This project is an API that can be interacted with using HTTP methods:
 - `PUT /sche_1`: Updates the details of an existing user.
 - `DELETE /sche_1/:id`: Deletes a user with the specified ID.
 
-### Example
 
 To create a new user, you can make a `POST` request to `/sche_1` with a JSON body. For example:
 
-```json
+
 # User Management API
 
 This is a simple user management system implemented using Node.js, Express, and MySQL. It supports all the CRUD operations: Create, Read, Update, Delete.
