@@ -64,26 +64,34 @@ No request body is required. A successful call will return a JSON array of all u
         "user_email": "jane@example.com"
     }
 ]
+```
 
 ### POST /sche_1
 
 This endpoint is for adding new users or updating existing ones. Send a JSON object in the following format:
 
+```json
 {
     "user_id": 0,  // 0 for a new user, or existing user_id for updates
     "user_name": "New User",
     "user_email": "newuser@example.com"
 }
+```
 
 The user_id is 0 for new users. For updating existing users, replace 0 with the user's user_id.
 
 ### PUT /sche_1
 Send a JSON object containing the user_id, user_name, and user_email of the user you wish to update. Example request:
+
+```json
 {
     "user_id": 1,
     "user_name": "John Smith",
     "user_email": "johnsmith@example.com"
 }
+```
+
+
 If the operation is successful, you will receive a response "User Details Updated Successfully".
 
 
