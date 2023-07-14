@@ -47,10 +47,6 @@ This project is an API that can be interacted with using HTTP methods:
 - `PUT /sche_1`: Updates the details of an existing user.
 - `DELETE /sche_1/:id`: Deletes a user with the specified ID.
 
-### Example
-
-
-
 
 ### GET /sche_1
 
