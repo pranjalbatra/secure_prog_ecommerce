@@ -9,12 +9,16 @@ This is a simple user management system implemented using Node.js, Express, and 
 ## Setup/Installation
 
 1. Clone this repository to your local machine.
-2. Navigate to the directory of the project.
+2. Set up the database credentials:
+   Create a .env file in the root directory of the project.
+   Add the following lines to the .env file:
+   DB_USER=root
+   DB_PASSWORD=Pan20110529@
+
 3. Install the required dependencies with `npm install`.
 4. Start the server with `node scripts.js`.
-
-## Usage
-
+The backend server will start running on http://localhost:8000.
+## API Endpoints
 This project is an API that can be interacted with using HTTP methods:
 
 - `GET /sche_1`: Retrieves a list of all users.
