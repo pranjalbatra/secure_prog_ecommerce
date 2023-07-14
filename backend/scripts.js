@@ -1,3 +1,4 @@
+require('dotenv').config()
 const mysql = require('mysql2');
 const express = require('express');
 const bodyparser = require('body-parser');
@@ -5,13 +6,16 @@ const bodyparser = require('body-parser');
 var app = express();
 app.use(bodyparser.json());
 
+
 const dbConfig = {
     host: '127.0.0.1',
-    user: 'root',
-    password: 'Pan20110529@',
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     database: 'sche_1',
     multipleStatements: true
 };
+
+
 
 function handleDisconnect(dbConfig) {
     mysqlConnection = mysql.createConnection(dbConfig); 
