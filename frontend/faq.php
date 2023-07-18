@@ -11,19 +11,19 @@
   <div class="faq">
     <h10 id="faqheading">Frequently Asked Questions</h10><br>
     <h10>Who are the creators of Funity?</h10><br>
-    <p1>The creators of Funity are Michael Doroch, James Dasari, Pan Zhang, and Michael Dang</p1>
+    <p1>1</p1>
     <br>
     <h10>Where is Funity established?</h10><br>
-    <p1>Funity is established at the Flinders University Tonsley Campus</p1>
+    <p1>2 Campus</p1>
     <br>
     <h10>How many products does Funity offer?</h10><br>
-    <p1>Funity offers 13 different products all with the lowest prices!</p1>
+    <p1>3</p1>
     <br>
     <h10>What kind of products does Funity sell?</h10><br>
-    <p1>Funity sells a range of board games such as playing cards, jigsaw puzzles, and also Rubik's cubes.</p1>
+    <p1>4</p1>
     <br>
     <h10>Where did the name Funity originate from?</h10><br>
-    <p1>A random name generator website.</p1>
+    <p1>5</p1>
     <br>
   </div>
 
