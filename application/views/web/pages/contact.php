@@ -25,7 +25,7 @@
                             <span><input type="text" value=""></span>
                         </div>
                         <div>
-                            <span><label>MOBILE.NO</label></span>
+                            <span><label>MOBILE</label></span>
                             <span><input type="text" value=""></span>
                         </div>
                         <div>

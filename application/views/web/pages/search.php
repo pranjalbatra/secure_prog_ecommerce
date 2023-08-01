@@ -51,9 +51,9 @@
     .content_pagi{padding:20px;border: 1px solid #EBE8E8;border-radius: 3px;}
     .pagination{}
     .pagination ul{}
-    .pagination ul li{float: left}
-    .pagination ul li a{color: #000;padding: 7px 12px;border: 1px solid #ddd;font-size: 18px;}
-    .pagination ul li a:hover{background:#ddd;}
-    .pagiactive a{background:#ddd;}
+    .pagination ul li{float: right}
+    .pagination ul li a{color: blue;padding: 15px 12px;border: 1px solid #ddd;font-size: 30px;}
+    .pagination ul li a:hover{background:blue;}
+    .pagiactive a{background:blue;}
 
 </style>
