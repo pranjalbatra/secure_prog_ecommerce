@@ -3,11 +3,11 @@
 <div class="main">
     <div class="content">
         <div class="login_panel">
-            <h3>Existing Customers</h3>
-            <p>Sign in with the form below.</p>
+            <h3>Customers login</h3>
+            <p>Existing user only</p>
             <style type="text/css">
-                #result{color:red;padding: 5px}
-                #result p{color:red}
+                #result{color:blue;padding: 15px}
+                #result p{color:blue}
             </style>
             <div id="result">
                 <p><?php echo $this->session->flashdata('messagelogin'); ?></p>
@@ -77,7 +77,7 @@
                             </td>
                         </tr> 
                     </tbody></table> 
-                <div class="search"><div><button class="grey">Create Account</button></div></div>
+                <div class="search"><div><button class="yellow">Create Account</button></div></div>
                 <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
                 <div class="clear"></div>
             </form>

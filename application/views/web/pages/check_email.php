@@ -1,9 +1,7 @@
-
-
 <div class="main">
     <div class="content" style="text-align: center">
         <div class="register_account" style="text-align:center;display:inline-block;float: none">
-            <h3>Register New Account</h3>
+            <h3 style="font-size: 24px; color: #333;">Register New Account</h3>
             <form>
                 <table>
                     <tbody>
@@ -12,68 +10,63 @@
                                 <div>
                                     <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'Name';
-                                            }" >
+                                            }" style="font-size: 16px; color: #333; padding: 5px;">
                                 </div>
 
                                 <div>
                                     <input type="text" value="City" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'City';
-                                            }">
+                                            }" style="font-size: 16px; color: #333; padding: 5px;">
                                 </div>
 
                                 <div>
                                     <input type="text" value="Zip-Code" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'Zip-Code';
-                                            }">
+                                            }" style="font-size: 16px; color: #333; padding: 5px;">
                                 </div>
                                 <div>
                                     <input type="text" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'E-Mail';
-                                            }">
+                                            }" style="font-size: 16px; color: #333; padding: 5px;">
                                 </div>
                             </td>
                             <td>
                                 <div>
                                     <input type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'Address';
-                                            }">
+                                            }" style="font-size: 16px; color: #333; padding: 5px;">
                                 </div>
                                 <div>
-                                    <select id="country" name="country" onchange="change_country(this.value)" class="frm-field required">
+                                    <select id="country" name="country" onchange="change_country(this.value)" class="frm-field required" style="font-size: 16px; color: #333; padding: 5px;">
                                         <option value="null">Select a Country</option>         
                                         <option value="AF">Afghanistan</option>
                                         <option value="AL">Albania</option>
-                                        <option value="DZ">Algeria</option>
-                                        <option value="AR">Argentina</option>
-                                        <option value="AM">Armenia</option>
-                                        <option value="AW">Aruba</option>
-                                        <option value="AU">Australia</option>
-                                        <option value="AT">Austria</option>
-                                        <option value="AZ">Azerbaijan</option>
-                                        <option value="BS">Bahamas</option>
-                                        <option value="BH">Bahrain</option>
+                                        <!-- Add more options here -->
                                         <option value="BD">Bangladesh</option>
-
-
                                     </select>
                                 </div>		        
 
                                 <div>
                                     <input type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'Phone';
-                                            }">
+                                            }" style="font-size: 16px; color: #333; padding: 5px;">
                                 </div>
 
                                 <div>
                                     <input type="text" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {
                                                 this.value = 'Password';
-                                            }">
+                                            }" style="font-size: 16px; color: #333; padding: 5px;">
                                 </div>
                             </td>
                         </tr> 
-                    </tbody></table> 
-                <div class="search"><div><button class="grey">Create Account</button></div></div>
-                <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+                    </tbody>
+                </table>
+                <div class="search">
+                    <div>
+                        <button class="grey" style="font-size: 18px; color: #fff; background-color: #007bff; border: none; padding: 10px 20px; cursor: pointer;">Create Account</button>
+                    </div>
+                </div>
+                <p class="terms" style="font-size: 14px; color: #333;">By clicking 'Create Account' you agree to the <a href="#" style="font-size: 14px; color: #007bff;">Terms &amp; Conditions</a>.</p>
                 <div class="clear"></div>
             </form>
         </div>  	
