@@ -52,7 +52,7 @@
                             <td class="center"><?php echo $single_brand->brand_name;?></td>
                             <td class="center"><?php echo $single_brand->brand_description;?></td>
                             <td class="center">
-                                    <?php if ($single_brand->publication_status == 1) { ?>
+                                    <?php if ($single_brand->upload_status == 1) { ?>
                                         <span class="label label-success">Published</span>
                                     <?php } else {
                                         ?>
@@ -61,7 +61,7 @@
                                     ?>
                                 </td>
                                 <td class="center">
-                                    <?php if ($single_brand->publication_status == 0) { ?>
+                                    <?php if ($single_brand->upload_status == 0) { ?>
                                         <a class="btn btn-success" href="<?php echo base_url('published/brand/' . $single_brand->brand_id); ?>">
                                             <i class="halflings-icon white thumbs-up"></i>  
                                         </a>

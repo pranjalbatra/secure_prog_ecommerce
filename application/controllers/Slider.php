@@ -31,12 +31,12 @@ class Slider extends CI_Controller
         $data                       = array();
         $data['slider_title']       = $this->input->post('slider_title');
         $data['slider_link']        = $this->input->post('slider_link');
-        $data['publication_status'] = $this->input->post('publication_status');
+        $data['upload_status'] = $this->input->post('upload_status');
 
         $this->form_validation->set_rules('slider_title', 'Slider Title', 'trim|required');
         $this->form_validation->set_rules('slider_link', 'Slider Link', 'trim|required');
-        // $this->form_validation->set_rules('product_image', 'Product Image', 'trim|required');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
+        // $this->form_validation->set_rules('commodity_image', 'Product Image', 'trim|required');
+        $this->form_validation->set_rules('upload_status', 'Publication Status', 'trim|required');
 
         if (!empty($_FILES['slider_image']['name'])) {
             $config['upload_path']   = './uploads/';
@@ -100,13 +100,13 @@ class Slider extends CI_Controller
         $data                       = array();
         $data['slider_title']       = $this->input->post('slider_title');
         $data['slider_link']        = $this->input->post('slider_link');
-        $data['publication_status'] = $this->input->post('publication_status');
+        $data['upload_status'] = $this->input->post('upload_status');
         $delete_image               = $this->input->post('slider_delete_image');
 
         $this->form_validation->set_rules('slider_title', 'Slider Title', 'trim|required');
         $this->form_validation->set_rules('slider_link', 'Slider Link', 'trim|required');
-        // $this->form_validation->set_rules('product_image', 'Product Image', 'trim|required');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
+        // $this->form_validation->set_rules('commodity_image', 'Product Image', 'trim|required');
+        $this->form_validation->set_rules('upload_status', 'Publication Status', 'trim|required');
 
         if (!empty($_FILES['slider_image']['name'])) {
             $config['upload_path']   = './uploads/';

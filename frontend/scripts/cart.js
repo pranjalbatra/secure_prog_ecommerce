@@ -1,7 +1,7 @@
-// cart (should return a string), should be made up of a string like cart(product_id)=amount;
+// cart (should return a string), should be made up of a string like cart(commodity_id)=amount;
 
-function getCartValue(product_id) {
-    var name = "cart" + product_id + "=";
+function getCartValue(commodity_id) {
+    var name = "cart" + commodity_id + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -16,33 +16,33 @@ function getCartValue(product_id) {
     return null;
   }
   
-  function addToCart(product_id, amount) {
-    if (getCartValue("Highest") < product_id) {
-      document.cookie = "cartHighest=" + product_id;
+  function addToCart(commodity_id, amount) {
+    if (getCartValue("Highest") < commodity_id) {
+      document.cookie = "cartHighest=" + commodity_id;
     }
   
     // check if product is already in the cart
-    var cartItem = getCartValue(product_id);
+    var cartItem = getCartValue(commodity_id);
   
     if (cartItem == null) {
       // if product does not exist in cart, add to cart
-      var toAdd = "cart" + product_id + "=" + amount + ";";
+      var toAdd = "cart" + commodity_id + "=" + amount + ";";
       document.cookie = toAdd;
     } else {
       // add cartItem to original value
       var total = Number(amount) + Number(cartItem);
-      var toAdd = "cart" + product_id + "=" + total + ";";
+      var toAdd = "cart" + commodity_id + "=" + total + ";";
       document.cookie = toAdd;
     }
   }
   
-  function addToCartRedirect(product_id, amount) {
-    addToCart(product_id, amount);
+  function addToCartRedirect(commodity_id, amount) {
+    addToCart(commodity_id, amount);
     window.location = "cart.php";
   }
   
-  function removeFromCart(product_id) {
-    var toRemove = "cart" + product_id + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+  function removeFromCart(commodity_id) {
+    var toRemove = "cart" + commodity_id + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     document.cookie = toRemove;
   }
   

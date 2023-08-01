@@ -53,7 +53,7 @@
                         <div class="control-group">
                             <label class="control-label" for="textarea2">Publication Status</label>
                             <div class="controls">
-                                <select name="publication_status">
+                                <select name="upload_status">
                                     <option value="1">Published</option>
                                     <option value="0">UnPublished</option>
                                 </select>

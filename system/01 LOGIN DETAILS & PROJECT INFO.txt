@@ -1,6 +1,6 @@
 **Log on to codeastro.com for more projects!**
 
-**Database Name: shopci**
+**Database Name: secure_ecom_db**
 
 **Developed by Rostom Ali**
 

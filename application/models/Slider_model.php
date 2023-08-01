@@ -39,14 +39,14 @@ class Slider_Model extends CI_Model
 
     public function published_slider_info($id)
     {
-        $this->db->set('publication_status', 1);
+        $this->db->set('upload_status', 1);
         $this->db->where('slider_id', $id);
         return $this->db->update('tbl_slider');
     }
 
     public function unpublished_slider_info($id)
     {
-        $this->db->set('publication_status', 0);
+        $this->db->set('upload_status', 0);
         $this->db->where('slider_id', $id);
         return $this->db->update('tbl_slider');
     }

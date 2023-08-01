@@ -1,5 +1,5 @@
 <?php 
 
-$this->db->update('tbl_order',$data,array('actions' => 'Done'));
+$this->db->update('sed_manage_order',$data,array('actions' => 'Done'));
 
 ?>

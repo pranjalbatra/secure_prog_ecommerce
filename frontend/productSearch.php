@@ -17,7 +17,7 @@
 
     // Input validation required
 
-    $sql = "SELECT product_id, name, price FROM products WHERE name LIKE ?";
+    $sql = "SELECT commodity_id, name, price FROM products WHERE name LIKE ?";
 
     $id;
     $name;
@@ -36,7 +36,7 @@
           echo "<div class='searchcontainer'><a href='product.php?id=$id' class='searchResult'>$name</a> - $$price AUD<br><br>";
 
           echo "<form action=\"addToCart.php\" method=\"post\">";
-          echo "<input type=\"hidden\" name=\"product_id\" value=\"" . $id . "\">";
+          echo "<input type=\"hidden\" name=\"commodity_id\" value=\"" . $id . "\">";
           echo "<input type=\"hidden\" name=\"add_amount\" value='1'>";
           echo "<input type=\"submit\" value=\"Add to cart\" />"; 
           echo "</div></form>";

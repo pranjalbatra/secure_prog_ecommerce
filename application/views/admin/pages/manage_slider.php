@@ -54,7 +54,7 @@
                                 <td class="center"><a target="_blank" href="<?php echo base_url($single_slider->slider_title);?>">Go To Link</a></td>
                                 <td class="center"><img src="<?php echo base_url('uploads/'.$single_slider->slider_image);?>" style="width:300px;height:100px"/></td>
                                 <td class="center">
-                                    <?php if ($single_slider->publication_status == 1) { ?>
+                                    <?php if ($single_slider->upload_status == 1) { ?>
                                         <span class="label label-success">Published</span>
                                     <?php } else {
                                         ?>
@@ -63,7 +63,7 @@
                                     ?>
                                 </td>
                                 <td class="center">
-                                    <?php if ($single_slider->publication_status == 0) { ?>
+                                    <?php if ($single_slider->upload_status == 0) { ?>
                                         <a class="btn btn-success" href="<?php echo base_url('published/slider/' . $single_slider->slider_id); ?>">
                                             <i class="halflings-icon white thumbs-up"></i>  
                                         </a>

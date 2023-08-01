@@ -22,7 +22,7 @@
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cart_items['name'] ?></td>
-                                <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['product_image']) ?>" alt=""/></td>
+                                <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['commodity_image']) ?>" alt=""/></td>
                                 <td>Rs. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('update/cart'); ?>" method="post">

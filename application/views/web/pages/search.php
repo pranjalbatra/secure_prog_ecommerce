@@ -17,11 +17,11 @@
             <div class="section group">
                 <?php foreach ($chunk_products as $single_products) { ?>
                     <div class="grid_1_of_4 images_1_of_4">
-                        <a href="<?php echo base_url('single/'.$single_products->product_id);?>"><img style="width:250px;height:250px" src="<?php echo base_url('uploads/'.$single_products->product_image)?>" alt="" /></a>
-                        <h2><?php echo $single_products->product_title ?></h2>
-                        <p><?php echo word_limiter($single_products->product_short_description, 10) ?></p>
-                        <p><span class="price"><?php echo $this->cart->format_number($single_products->product_price) ?> Rs.</span></p>
-                        <div class="button"><span><a href="<?php echo base_url('single/'.$single_products->product_id);?>" class="details">Details</a></span></div>
+                        <a href="<?php echo base_url('single/'.$single_products->commodity_id);?>"><img style="width:250px;height:250px" src="<?php echo base_url('uploads/'.$single_products->commodity_image)?>" alt="" /></a>
+                        <h2><?php echo $single_products->commodity_title ?></h2>
+                        <p><?php echo word_limiter($single_products->commodity_summary, 10) ?></p>
+                        <p><span class="price"><?php echo $this->cart->format_number($single_products->commodity_price) ?> Rs.</span></p>
+                        <div class="button"><span><a href="<?php echo base_url('single/'.$single_products->commodity_id);?>" class="details">Details</a></span></div>
                     </div>
                     <?php
                 }
