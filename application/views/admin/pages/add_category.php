@@ -38,20 +38,20 @@
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Category Name</label>
                             <div class="controls">
-                                <input class="span6 typeahead" id="category_name" name="category_name" type="text"/>
+                                <input class="span6 typeahead" id="division_name" name="division_name" type="text"/>
                             </div>
                         </div>          
                         <div class="control-group">
                             <label class="control-label" for="textarea2">Category Description</label>
                             <div class="controls">
-                                <textarea class="cleditor" id="category_description" name="category_description" rows="3"></textarea>
+                                <textarea class="cleditor" id="division_description" name="division_description" rows="3"></textarea>
                             </div>
                         </div>
                                 
                         <div class="control-group">
                             <label class="control-label" for="textarea2">Publication Status</label>
                             <div class="controls">
-                                <select name="publication_status">
+                                <select name="upload_status">
                                     <option value="1">Published</option>
                                     <option value="0">UnPublished</option>
                                 </select>

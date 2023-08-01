@@ -5,8 +5,8 @@
         <div class="register_account" style="text-align:center;display:inline-block;float: none">
             <h3>Your Shipping Address</h3>
             <style type="text/css">
-                #result{color:red;padding: 5px}
-                #result p{color:red}
+                #result{color:blue;padding: 30px}
+                #result p{color:blue}
             </style>
             <div id="result">
                 <p><?php echo $this->session->flashdata('message'); ?></p>
@@ -66,7 +66,7 @@
                             </td>
                         </tr> 
                     </tbody></table> 
-                <div class="search"><div><button class="grey">Create Account</button></div></div>
+                <div class="search"><div><button class="blue">Create Account</button></div></div>
                 <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
                 <div class="clear"></div>
             </form>

@@ -38,7 +38,7 @@ class Web extends CI_Controller
         $this->load->library('pagination');
 
         $config['base_url'] = base_url('web/product');
-        $config['total_rows'] = $this->db->get('tbl_product')->num_rows();
+        $config['total_rows'] = $this->db->get('sed_commodity')->num_rows();
         $config['per_page'] = 8;
         $config['num_links'] = 2;
         $config['full_tag_open'] = '<ul>';
@@ -96,14 +96,14 @@ class Web extends CI_Controller
     public function save_cart()
     {
         $data       = array();
-        $product_id = $this->input->post('product_id');
-        $results    = $this->web_model->get_product_by_id($product_id);
+        $commodity_id = $this->input->post('commodity_id');
+        $results    = $this->web_model->get_product_by_id($commodity_id);
 
-        $data['id']      = $results->product_id;
-        $data['name']    = $results->product_title;
-        $data['price']   = $results->product_price;
+        $data['id']      = $results->commodity_id;
+        $data['name']    = $results->commodity_title;
+        $data['price']   = $results->commodity_price;
         $data['qty']     = $this->input->post('qty');
-        $data['options'] = array('product_image' => $results->product_image);
+        $data['options'] = array('commodity_image' => $results->commodity_image);
 
         $this->cart->insert($data);
         redirect('cart');
@@ -176,7 +176,7 @@ class Web extends CI_Controller
         $data['customer_zipcode']  = $this->input->post('customer_zipcode');
 
         $this->form_validation->set_rules('customer_name', 'Customer Name', 'trim|required');
-        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[tbl_customer.customer_email]');
+        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[sed_current_customers.customer_email]');
         $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
         $this->form_validation->set_rules('customer_address', 'Customer Address', 'trim|required');
         $this->form_validation->set_rules('customer_city', 'Customer City', 'trim|required');
@@ -263,7 +263,7 @@ class Web extends CI_Controller
         $data['customer_zipcode']  = $this->input->post('customer_zipcode');
 
         $this->form_validation->set_rules('customer_name', 'Customer Name', 'trim|required');
-        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[tbl_customer.customer_email]');
+        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[sed_current_customers.customer_email]');
         $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
         $this->form_validation->set_rules('customer_address', 'Customer Address', 'trim|required');
         $this->form_validation->set_rules('customer_city', 'Customer City', 'trim|required');
@@ -307,7 +307,7 @@ class Web extends CI_Controller
         $data['shipping_zipcode'] = $this->input->post('shipping_zipcode');
 
         $this->form_validation->set_rules('shipping_name', 'Shipping Name', 'trim|required');
-        $this->form_validation->set_rules('shipping_email', 'Shipping Email', 'trim|required|valid_email|is_unique[tbl_shipping.shipping_email]');
+        $this->form_validation->set_rules('shipping_email', 'Shipping Email', 'trim|required|valid_email|is_unique[sed_shippment.shipping_email]');
         $this->form_validation->set_rules('shipping_address', 'Shipping Address', 'trim|required');
         $this->form_validation->set_rules('shipping_city', 'Shipping City', 'trim|required');
         $this->form_validation->set_rules('shipping_country', 'Shipping Country', 'trim|required');
@@ -369,11 +369,11 @@ class Web extends CI_Controller
             foreach ($myoddata as $oddatas) {
 
                 $oddata['order_id']               = $order_id;
-                $oddata['product_id']             = $oddatas['id'];
+                $oddata['commodity_id']             = $oddatas['id'];
                 $oddata['product_name']           = $oddatas['name'];
-                $oddata['product_price']          = $oddatas['price'];
-                $oddata['product_sales_quantity'] = $oddatas['qty'];
-                $oddata['product_image']          = $oddatas['options']['product_image'];
+                $oddata['commodity_price']          = $oddatas['price'];
+                $oddata['commodity_sales_quantity'] = $oddatas['qty'];
+                $oddata['commodity_image']          = $oddatas['options']['commodity_image'];
                 $this->web_model->save_order_details_info($oddata);
             }
 

@@ -10,7 +10,7 @@
     require_once "include/banner.inc.php";
     require_once "include/dbconn.inc.php";
 
-    $sql = "SELECT product_id, name, price, product_id FROM products";
+    $sql = "SELECT commodity_id, name, price, commodity_id FROM products";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
@@ -21,12 +21,12 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 $name = $row["name"];
                 $price = $row["price"];
-                $id = $row["product_id"];
+                $id = $row["commodity_id"];
 
                 echo "<div class='bcontainer'>";
                 echo "<a href='product.php?id=$id' class='searchResult'>$name</a> - $$price AUD<br><br>";
 
-                $sql2 = 'SELECT file_location FROM productpicture WHERE product_id=?';
+                $sql2 = 'SELECT file_location FROM productpicture WHERE commodity_id=?';
                 $statement2 = mysqli_stmt_init($conn);
 
                 if (mysqli_stmt_prepare($statement2, $sql2)) {
@@ -40,7 +40,7 @@
                 }
 
                 echo "<form action=\"addToCart.php\" method=\"post\">";
-                echo "<input type=\"hidden\" name=\"product_id\" value=\"" . $id . "\">";
+                echo "<input type=\"hidden\" name=\"commodity_id\" value=\"" . $id . "\">";
                 echo "<input type=\"hidden\" name=\"add_amount\" value='1'>";
                 echo "<input class=\"center\" type=\"submit\" value=\"Add to cart\" />";
                 echo "</div></form>";

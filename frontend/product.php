@@ -15,7 +15,7 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
 
-        $sql = "SELECT name, publisher, price, age_rating, description FROM products WHERE product_id=?";
+        $sql = "SELECT name, publisher, price, age_rating, description FROM products WHERE commodity_id=?";
 
         $statement = mysqli_stmt_init($conn);
 
@@ -43,14 +43,14 @@
                 // make add-to-cart button
                 echo "<form action=\"addToCart.php\" method=\"post\">";
                 echo "<input id=\"submitadd\" type=\"number\" name=\"add_amount\" min=\"1\" value=\"1\">";
-                echo "<input type=\"hidden\" name=\"product_id\" value=\"" . $id . "\">";
+                echo "<input type=\"hidden\" name=\"commodity_id\" value=\"" . $id . "\">";
                 echo "<input type=\"submit\" value=\"Add to cart\" />"; 
                 echo "</form>";
 
                 echo "</div>";
 
                 // loading images...
-                $sql2 = 'SELECT file_location FROM productpicture WHERE product_id=?';
+                $sql2 = 'SELECT file_location FROM productpicture WHERE commodity_id=?';
                 $statement2 = mysqli_stmt_init($conn);
 
                 if (mysqli_stmt_prepare($statement2, $sql2)) {

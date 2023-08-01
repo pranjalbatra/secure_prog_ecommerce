@@ -31,29 +31,29 @@ class Product extends CI_Controller
     public function save_product()
     {
         $data                              = array();
-        $data['product_title']             = $this->input->post('product_title');
-        $data['product_short_description'] = $this->input->post('product_short_description');
-        $data['product_long_description']  = $this->input->post('product_long_description');
-        $data['product_price']             = $this->input->post('product_price');
-        $data['product_quantity']          = $this->input->post('product_quantity');
-        $data['product_category']          = $this->input->post('product_category');
-        $data['product_brand']             = $this->input->post('product_brand');
-        $data['product_feature']           = $this->input->post('product_feature');
-        $data['publication_status']        = $this->input->post('publication_status');
-        $data['product_author']            = $this->session->userdata('user_id');
+        $data['commodity_title']             = $this->input->post('commodity_title');
+        $data['commodity_summary'] = $this->input->post('commodity_summary');
+        $data['commodity_description']  = $this->input->post('commodity_description');
+        $data['commodity_price']             = $this->input->post('commodity_price');
+        $data['commodity_quantity']          = $this->input->post('commodity_quantity');
+        $data['commodity_category']          = $this->input->post('commodity_category');
+        $data['commodity_industry_brand']             = $this->input->post('commodity_industry_brand');
+        $data['commodity_feature']           = $this->input->post('commodity_feature');
+        $data['upload_status']        = $this->input->post('upload_status');
+        $data['commodity_author']            = $this->session->userdata('user_id');
 
-        $this->form_validation->set_rules('product_title', 'Product Title', 'trim|required');
-        $this->form_validation->set_rules('product_short_description', 'Product Short Description', 'trim|required');
-        $this->form_validation->set_rules('product_long_description', 'Product Long Status', 'trim|required');
-        // $this->form_validation->set_rules('product_image', 'Product Image', 'trim|required');
-        $this->form_validation->set_rules('product_price', 'Product Price', 'trim|required');
-        $this->form_validation->set_rules('product_quantity', 'Product Quantity', 'trim|required');
-        $this->form_validation->set_rules('product_category', 'Product Category', 'trim|required');
-        $this->form_validation->set_rules('product_brand', 'Product Brand', 'trim|required');
-        $this->form_validation->set_rules('product_feature', 'Product Feature', 'trim');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
+        $this->form_validation->set_rules('commodity_title', 'Product Title', 'trim|required');
+        $this->form_validation->set_rules('commodity_summary', 'Product Short Description', 'trim|required');
+        $this->form_validation->set_rules('commodity_description', 'Product Long Status', 'trim|required');
+        // $this->form_validation->set_rules('commodity_image', 'Product Image', 'trim|required');
+        $this->form_validation->set_rules('commodity_price', 'Product Price', 'trim|required');
+        $this->form_validation->set_rules('commodity_quantity', 'Product Quantity', 'trim|required');
+        $this->form_validation->set_rules('commodity_category', 'Product Category', 'trim|required');
+        $this->form_validation->set_rules('commodity_industry_brand', 'Product Brand', 'trim|required');
+        $this->form_validation->set_rules('commodity_feature', 'Product Feature', 'trim');
+        $this->form_validation->set_rules('upload_status', 'Publication Status', 'trim|required');
 
-        if (!empty($_FILES['product_image']['name'])) {
+        if (!empty($_FILES['commodity_image']['name'])) {
             $config['upload_path']   = './uploads/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size']      = 4096;
@@ -62,13 +62,13 @@ class Product extends CI_Controller
 
             $this->upload->initialize($config);
 
-            if (!$this->upload->do_upload('product_image')) {
+            if (!$this->upload->do_upload('commodity_image')) {
                 $error = $this->upload->display_errors();
                 $this->session->set_flashdata('message', $error);
                 redirect('add/product');
             } else {
                 $post_image            = $this->upload->data();
-                $data['product_image'] = $post_image['file_name'];
+                $data['commodity_image'] = $post_image['file_name'];
             }
         }
         if ($this->form_validation->run() == true) {
@@ -124,33 +124,33 @@ class Product extends CI_Controller
     public function update_product($id)
     {
         $data                              = array();
-        $data['product_title']             = $this->input->post('product_title');
-        $data['product_short_description'] = $this->input->post('product_short_description');
-        $data['product_long_description']  = $this->input->post('product_long_description');
-        $data['product_price']             = $this->input->post('product_price');
-        $data['product_quantity']          = $this->input->post('product_quantity');
-        $data['product_category']          = $this->input->post('product_category');
-        $data['product_brand']             = $this->input->post('product_brand');
-        $data['product_feature']           = $this->input->post('product_feature');
-        $data['publication_status']        = $this->input->post('publication_status');
-        $data['product_author']            = $this->session->userdata('user_id');
+        $data['commodity_title']             = $this->input->post('commodity_title');
+        $data['commodity_summary'] = $this->input->post('commodity_summary');
+        $data['commodity_description']  = $this->input->post('commodity_description');
+        $data['commodity_price']             = $this->input->post('commodity_price');
+        $data['commodity_quantity']          = $this->input->post('commodity_quantity');
+        $data['commodity_category']          = $this->input->post('commodity_category');
+        $data['commodity_industry_brand']             = $this->input->post('commodity_industry_brand');
+        $data['commodity_feature']           = $this->input->post('commodity_feature');
+        $data['upload_status']        = $this->input->post('upload_status');
+        $data['commodity_author']            = $this->session->userdata('user_id');
 
         $product_delete_image = $this->input->post('product_delete_image');
 
         $delete_image = substr($product_delete_image, strlen(base_url()));
 
-        $this->form_validation->set_rules('product_title', 'Product Title', 'trim|required');
-        $this->form_validation->set_rules('product_short_description', 'Product Short Description', 'trim|required');
-        $this->form_validation->set_rules('product_long_description', 'Product Long Status', 'trim|required');
-        // $this->form_validation->set_rules('product_image', 'Product Image', 'trim|required');
-        $this->form_validation->set_rules('product_price', 'Product Price', 'trim|required');
-        $this->form_validation->set_rules('product_quantity', 'Product Quantity', 'trim|required');
-        $this->form_validation->set_rules('product_category', 'Product Category', 'trim|required');
-        $this->form_validation->set_rules('product_brand', 'Product Brand', 'trim|required');
-        $this->form_validation->set_rules('product_feature', 'Product Feature', 'trim');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
+        $this->form_validation->set_rules('commodity_title', 'Product Title', 'trim|required');
+        $this->form_validation->set_rules('commodity_summary', 'Product Short Description', 'trim|required');
+        $this->form_validation->set_rules('commodity_description', 'Product Long Status', 'trim|required');
+        // $this->form_validation->set_rules('commodity_image', 'Product Image', 'trim|required');
+        $this->form_validation->set_rules('commodity_price', 'Product Price', 'trim|required');
+        $this->form_validation->set_rules('commodity_quantity', 'Product Quantity', 'trim|required');
+        $this->form_validation->set_rules('commodity_category', 'Product Category', 'trim|required');
+        $this->form_validation->set_rules('commodity_industry_brand', 'Product Brand', 'trim|required');
+        $this->form_validation->set_rules('commodity_feature', 'Product Feature', 'trim');
+        $this->form_validation->set_rules('upload_status', 'Publication Status', 'trim|required');
 
-        if (!empty($_FILES['product_image']['name'])) {
+        if (!empty($_FILES['commodity_image']['name'])) {
             $config['upload_path']   = './uploads/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size']      = 4096;
@@ -159,13 +159,13 @@ class Product extends CI_Controller
 
             $this->upload->initialize($config);
 
-            if (!$this->upload->do_upload('product_image')) {
+            if (!$this->upload->do_upload('commodity_image')) {
                 $error = $this->upload->display_errors();
                 $this->session->set_flashdata('message', $error);
                 redirect('add/product');
             } else {
                 $post_image            = $this->upload->data();
-                $data['product_image'] = $post_image['file_name'];
+                $data['commodity_image'] = $post_image['file_name'];
                 unlink($delete_image);
             }
         }
@@ -189,7 +189,7 @@ class Product extends CI_Controller
     public function delete_product($id)
     {
         $delete_image = $this->get_image_by_id($id);
-        unlink('uploads/' . $delete_image->product_image);
+        unlink('uploads/' . $delete_image->commodity_image);
         $result = $this->product_model->delete_product_info($id);
         if ($result) {
             $this->session->set_flashdata('message', 'Product Deleted Sucessfully');
@@ -202,9 +202,9 @@ class Product extends CI_Controller
 
     private function get_image_by_id($id)
     {
-        $this->db->select('product_image');
-        $this->db->from('tbl_product');
-        $this->db->where('tbl_product.product_id', $id);
+        $this->db->select('commodity_image');
+        $this->db->from('sed_commodity');
+        $this->db->where('sed_commodity.commodity_id', $id);
         $info = $this->db->get();
         return $info->row();
     }

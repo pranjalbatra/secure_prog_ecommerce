@@ -69,7 +69,7 @@ if(isset($_POST["email_address"]) && isset($_POST["credit_card"])){
 // dont need stmt_prepare because it's a static statement
 
 if($successful){
-    $sql = "SELECT MAX(product_id) as max_id FROM products";
+    $sql = "SELECT MAX(commodity_id) as max_id FROM products";
 
     if($result = mysqli_query($conn, $sql)){
         $max_id = mysqli_fetch_assoc($result)["max_id"];
@@ -82,10 +82,10 @@ if($successful){
                 if(is_numeric($quantity)){
                     // add a Value to orderedProduct with SQL
                     // order_id = $thisOrderId
-                    // product_id = $i
+                    // commodity_id = $i
                     // quantity = $quantity
 
-                    $sql = "INSERT INTO orderedProduct(order_id, product_id, quantity) VALUES (?, ?, ?);";
+                    $sql = "INSERT INTO orderedProduct(order_id, commodity_id, quantity) VALUES (?, ?, ?);";
                     $statement = mysqli_stmt_init($conn);
 
                     if(mysqli_stmt_prepare($statement, $sql)){

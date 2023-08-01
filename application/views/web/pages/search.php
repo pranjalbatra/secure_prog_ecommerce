@@ -17,11 +17,11 @@
             <div class="section group">
                 <?php foreach ($chunk_products as $single_products) { ?>
                     <div class="grid_1_of_4 images_1_of_4">
-                        <a href="<?php echo base_url('single/'.$single_products->product_id);?>"><img style="width:250px;height:250px" src="<?php echo base_url('uploads/'.$single_products->product_image)?>" alt="" /></a>
-                        <h2><?php echo $single_products->product_title ?></h2>
-                        <p><?php echo word_limiter($single_products->product_short_description, 10) ?></p>
-                        <p><span class="price"><?php echo $this->cart->format_number($single_products->product_price) ?> Rs.</span></p>
-                        <div class="button"><span><a href="<?php echo base_url('single/'.$single_products->product_id);?>" class="details">Details</a></span></div>
+                        <a href="<?php echo base_url('single/'.$single_products->commodity_id);?>"><img style="width:250px;height:250px" src="<?php echo base_url('uploads/'.$single_products->commodity_image)?>" alt="" /></a>
+                        <h2><?php echo $single_products->commodity_title ?></h2>
+                        <p><?php echo word_limiter($single_products->commodity_summary, 10) ?></p>
+                        <p><span class="price"><?php echo $this->cart->format_number($single_products->commodity_price) ?> Rs.</span></p>
+                        <div class="button"><span><a href="<?php echo base_url('single/'.$single_products->commodity_id);?>" class="details">Details</a></span></div>
                     </div>
                     <?php
                 }
@@ -51,9 +51,9 @@
     .content_pagi{padding:20px;border: 1px solid #EBE8E8;border-radius: 3px;}
     .pagination{}
     .pagination ul{}
-    .pagination ul li{float: left}
-    .pagination ul li a{color: #000;padding: 7px 12px;border: 1px solid #ddd;font-size: 18px;}
-    .pagination ul li a:hover{background:#ddd;}
-    .pagiactive a{background:#ddd;}
+    .pagination ul li{float: right}
+    .pagination ul li a{color: blue;padding: 15px 12px;border: 1px solid #ddd;font-size: 30px;}
+    .pagination ul li a:hover{background:blue;}
+    .pagiactive a{background:blue;}
 
 </style>

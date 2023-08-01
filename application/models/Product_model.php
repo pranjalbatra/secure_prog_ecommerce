@@ -5,62 +5,62 @@ class Product_Model extends CI_Model
 
     public function save_product_info($data)
     {
-        return $this->db->insert('tbl_product', $data);
+        return $this->db->insert('sed_commodity', $data);
     }
 
     public function get_all_product()
     {
-        $this->db->select('*,tbl_product.publication_status as pstatus');
-        $this->db->from('tbl_product');
-        $this->db->join('tbl_category', 'tbl_category.id=tbl_product.product_category');
-        $this->db->join('tbl_brand', 'tbl_brand.brand_id=tbl_product.product_brand');
-        $this->db->order_by('tbl_product.product_id', 'DESC');
+        $this->db->select('*,sed_commodity.upload_status as pstatus');
+        $this->db->from('sed_commodity');
+        $this->db->join('sed_division', 'sed_division.id=sed_commodity.commodity_category');
+        $this->db->join('sed_industry_brand', 'sed_industry_brand.brand_id=sed_commodity.commodity_industry_brand');
+        $this->db->order_by('sed_commodity.commodity_id', 'DESC');
         $info = $this->db->get();
         return $info->result();
     }
 
     public function edit_product_info($id)
     {
-        $this->db->select('*,tbl_product.publication_status as pstatus');
-        $this->db->from('tbl_product');
-        $this->db->join('tbl_category', 'tbl_category.id=tbl_product.product_category');
-        $this->db->join('tbl_brand', 'tbl_brand.brand_id=tbl_product.product_brand');
-        $this->db->where('tbl_product.product_id', $id);
+        $this->db->select('*,sed_commodity.upload_status as pstatus');
+        $this->db->from('sed_commodity');
+        $this->db->join('sed_division', 'sed_division.id=sed_commodity.commodity_category');
+        $this->db->join('sed_industry_brand', 'sed_industry_brand.brand_id=sed_commodity.commodity_industry_brand');
+        $this->db->where('sed_commodity.commodity_id', $id);
         $info = $this->db->get();
         return $info->row();
     }
 
     public function delete_product_info($id)
     {
-        $this->db->where('product_id', $id);
-        return $this->db->delete('tbl_product');
+        $this->db->where('commodity_id', $id);
+        return $this->db->delete('sed_commodity');
     }
 
     public function update_product_info($data, $id)
     {
-        $this->db->where('product_id', $id);
-        return $this->db->update('tbl_product', $data);
+        $this->db->where('commodity_id', $id);
+        return $this->db->update('sed_commodity', $data);
     }
 
     public function published_product_info($id)
     {
-        $this->db->set('publication_status', 1);
-        $this->db->where('product_id', $id);
-        return $this->db->update('tbl_product');
+        $this->db->set('upload_status', 1);
+        $this->db->where('commodity_id', $id);
+        return $this->db->update('sed_commodity');
     }
 
     public function unpublished_product_info($id)
     {
-        $this->db->set('publication_status', 0);
-        $this->db->where('product_id', $id);
-        return $this->db->update('tbl_product');
+        $this->db->set('upload_status', 0);
+        $this->db->where('commodity_id', $id);
+        return $this->db->update('sed_commodity');
     }
 
     public function get_all_published_category()
     {
         $this->db->select('*');
-        $this->db->from('tbl_category');
-        $this->db->where('publication_status', 1);
+        $this->db->from('sed_division');
+        $this->db->where('upload_status', 1);
         $info = $this->db->get();
         return $info->result();
     }
@@ -68,8 +68,8 @@ class Product_Model extends CI_Model
     public function get_all_published_brand()
     {
         $this->db->select('*');
-        $this->db->from('tbl_brand');
-        $this->db->where('publication_status', 1);
+        $this->db->from('sed_industry_brand');
+        $this->db->where('upload_status', 1);
         $info = $this->db->get();
         return $info->result();
     }

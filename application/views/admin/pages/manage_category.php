@@ -47,10 +47,10 @@
                             ?>
                             <tr>
                                 <td><?php echo $i; ?></td>
-                                <td><?php echo $single_category->category_name ?></td>
-                                <td><?php echo $single_category->category_description ?></td>
+                                <td><?php echo $single_category->division_name ?></td>
+                                <td><?php echo $single_category->division_description ?></td>
                                 <td class="center">
-                                    <?php if ($single_category->publication_status == 1) { ?>
+                                    <?php if ($single_category->upload_status == 1) { ?>
                                         <span class="label label-success">Published</span>
                                     <?php } else {
                                         ?>
@@ -59,7 +59,7 @@
                                     ?>
                                 </td>
                                 <td class="center">
-                                    <?php if ($single_category->publication_status == 0) { ?>
+                                    <?php if ($single_category->upload_status == 0) { ?>
                                         <a class="btn btn-success" href="<?php echo base_url('published/category/' . $single_category->id); ?>">
                                             <i class="halflings-icon white thumbs-up"></i>  
                                         </a>

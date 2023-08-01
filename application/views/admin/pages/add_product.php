@@ -38,48 +38,48 @@
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Product Title</label>
                             <div class="controls">
-                                <input class="span6 typeahead" name="product_title" id="fileInput" type="text"/>
+                                <input class="span6 typeahead" name="commodity_title" id="fileInput" type="text"/>
                             </div>
                         </div>          
                         <div class="control-group">
                             <label class="control-label" for="textarea2">Product Short Description</label>
                             <div class="controls">
-                                <textarea class="cleditor" name="product_short_description" id="textarea2" rows="2"></textarea>
+                                <textarea class="cleditor" name="commodity_summary" id="textarea2" rows="2"></textarea>
                             </div>
                         </div>        
                         <div class="control-group">
                             <label class="control-label" for="textarea2">Product Long Description</label>
                             <div class="controls">
-                                <textarea class="cleditor" name="product_long_description" id="textarea2" rows="4"></textarea>
+                                <textarea class="cleditor" name="commodity_description" id="textarea2" rows="4"></textarea>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Product Image</label>
                             <div class="controls">
-                                <input class="span6 typeahead" name="product_image" id="fileInput" type="file"/>
+                                <input class="span6 typeahead" name="commodity_image" id="fileInput" type="file"/>
                             </div>
                         </div> 
                         
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Product Price</label>
                             <div class="controls">
-                                <input class="span6 typeahead" name="product_price" id="fileInput" type="text"/>
+                                <input class="span6 typeahead" name="commodity_price" id="fileInput" type="text"/>
                             </div>
                         </div>
                         
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Product Quantity</label>
                             <div class="controls">
-                                <input class="span6 typeahead" name="product_quantity" id="fileInput" type="text"/>
+                                <input class="span6 typeahead" name="commodity_quantity" id="fileInput" type="text"/>
                             </div>
                         </div>
                         
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Product Category</label>
                             <div class="controls">
-                                <select name="product_category">
+                                <select name="commodity_category">
                                     <?php foreach($all_published_category as $single_category){?>
-                                    <option value="<?php echo $single_category->id;?>"><?php echo $single_category->category_name;?></option>
+                                    <option value="<?php echo $single_category->id;?>"><?php echo $single_category->division_name;?></option>
                                     <?php }?>
                                 </select>
                             </div>
@@ -88,7 +88,7 @@
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Product Brand</label>
                             <div class="controls">
-                                <select name="product_brand">
+                                <select name="commodity_industry_brand">
                                     <?php foreach($all_published_brand as $single_brand){?>
                                     <option value="<?php echo $single_brand->brand_id;?>"><?php echo $single_brand->brand_name;?></option>
                                     <?php }?>
@@ -99,15 +99,15 @@
                         <div class="control-group">
                             <label class="control-label" for="fileInput">Product Featured</label>
                             <div class="controls">
-                                <input class="span6 typeahead" value="0" name="product_feature" id="fileInput" type="radio" checked="true"/> Unfeature
-                                <input class="span6 typeahead" value="1" name="product_feature" id="fileInput" type="radio" />Featured
+                                <input class="span6 typeahead" value="0" name="commodity_feature" id="fileInput" type="radio" checked="true"/> Unfeature
+                                <input class="span6 typeahead" value="1" name="commodity_feature" id="fileInput" type="radio" />Featured
                              </div>
                         </div>
                         
                         <div class="control-group">
                             <label class="control-label" for="textarea2">Publication Status</label>
                             <div class="controls">
-                                <select name="publication_status">
+                                <select name="upload_status">
                                     <option value="1">Published</option>
                                     <option value="0">UnPublished</option>
                                 </select>

@@ -1,12 +1,10 @@
-
-
 <div class="main">
     <div class="content">
         <div class="cartoption">		
             <div class="cartpage">
-                <h2>Your Cart</h2>
+                <h2 style="font-size: 24px; color: #333;">Your Cart</h2>
                 <?php if ($this->cart->total_items()) { ?>
-                    <table class="tblone">
+                    <table class="tblone" style="font-size: 16px; color: #333;">
                         <tr>
                             <th width="5%">Sr.</th>
                             <th width="30%">Product Name</th>
@@ -24,7 +22,7 @@
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cart_items['name'] ?></td>
-                                <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['product_image']) ?>" alt=""/></td>
+                                <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['commodity_image']) ?>" alt=""/></td>
                                 <td>Rs. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('update/cart'); ?>" method="post">
@@ -45,13 +43,13 @@
 
 
                     </table>
-                    <table style="float:right;text-align:left;" width="40%">
+                    <table style="float:right;text-align:left;" width="40%" style="font-size: 16px; color: #333;">
                         <tr>
-                            <th>Sub Total : </th>
+                            <th>Sub Total:</th>
                             <td>Rs. <?php echo $this->cart->format_number($this->cart->total()) ?></td>
                         </tr>
                         <tr>
-                            <th>VAT : </th>
+                            <th>VAT:</th>
                             <td>Rs. 
                                 <?php
                                 $total = $this->cart->total();
@@ -61,13 +59,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Grand Total :</th>
+                            <th>Grand Total:</th>
                             <td>Rs. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
                         </tr>
                     </table>
                     <?php
                 } else {
-                    echo "<h1>Your Cart Empty</h1>";
+                    echo "<h1 style='font-size: 24px; color: #333;'>Your Cart is Empty</h1>";
                 }
                 ?>
             </div>
@@ -84,7 +82,7 @@
                         <?php
                     } elseif (!empty($customer_id)) {
                         ?>
-                        <a href = "<?php echo base_url('customer/shipping') ?>"> <img src = "<?php echo base_url() ?>assets/web/images/check.png" alt = "" /></a>
+                        <a href="<?php echo base_url('customer/shipping') ?>"> <img src="<?php echo base_url() ?>assets/web/images/check.png" alt="" /></a>
                         <?php
                     }
                     ?>

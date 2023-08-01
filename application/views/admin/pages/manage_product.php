@@ -51,10 +51,10 @@
                         ?>
                         <tr>
                             <td><?php echo $i;?></td>
-                            <td class="center"><?php echo $single_product->product_title;?></td>
-                            <td class="center"><img src="<?php echo base_url('uploads/'.$single_product->product_image);?>" style="width:200px;height:75px"/></td>
-                            <td class="center">Rs.<?php echo $this->cart->format_number($single_product->product_price);?></td>
-                            <td class="center"><?php echo $single_product->product_quantity;?></td>
+                            <td class="center"><?php echo $single_product->commodity_title;?></td>
+                            <td class="center"><img src="<?php echo base_url('uploads/'.$single_product->commodity_image);?>" style="width:200px;height:75px"/></td>
+                            <td class="center">Rs.<?php echo $this->cart->format_number($single_product->commodity_price);?></td>
+                            <td class="center"><?php echo $single_product->commodity_quantity;?></td>
                             <td class="center">
                                 <?php if ($single_product->pstatus == 1) { ?>
                                     <span class="label label-success">Published</span>
@@ -66,21 +66,21 @@
                             </td>
                            <td class="center">
                                     <?php if ($single_product->pstatus == 0) { ?>
-                                        <a class="btn btn-success" href="<?php echo base_url('published/product/' . $single_product->product_id); ?>">
+                                        <a class="btn btn-success" href="<?php echo base_url('published/product/' . $single_product->commodity_id); ?>">
                                             <i class="halflings-icon white thumbs-up"></i>  
                                         </a>
                                     <?php } else {
                                         ?>
-                                        <a class="btn btn-danger" href="<?php echo base_url('unpublished/product/' . $single_product->product_id); ?>">
+                                        <a class="btn btn-danger" href="<?php echo base_url('unpublished/product/' . $single_product->commodity_id); ?>">
                                             <i class="halflings-icon white thumbs-down"></i>  
                                         </a>
                                         <?php }
                                     ?>
 
-                                    <a class="btn btn-info" href="<?php echo base_url('edit/product/' . $single_product->product_id); ?>">
+                                    <a class="btn btn-info" href="<?php echo base_url('edit/product/' . $single_product->commodity_id); ?>">
                                         <i class="halflings-icon white edit"></i>  
                                     </a>
-                                    <a class="btn btn-danger" href="<?php echo base_url('delete/product/' . $single_product->product_id); ?>">
+                                    <a class="btn btn-danger" href="<?php echo base_url('delete/product/' . $single_product->commodity_id); ?>">
                                         <i class="halflings-icon white trash"></i> 
                                     </a>
                                 </td>

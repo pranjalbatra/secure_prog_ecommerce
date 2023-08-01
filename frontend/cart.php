@@ -70,7 +70,7 @@ if (isset($_COOKIE["cartHighest"])) {
 
         if ($quantity > 0) {
             $uniqueItems++;
-            $sql = "SELECT name, publisher, price, age_rating, description FROM products WHERE product_id=?";
+            $sql = "SELECT name, publisher, price, age_rating, description FROM products WHERE commodity_id=?";
             $statement = mysqli_stmt_init($conn);
 
             if (mysqli_stmt_prepare($statement, $sql)) {

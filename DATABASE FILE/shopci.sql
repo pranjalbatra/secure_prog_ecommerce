@@ -17,27 +17,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shopci`
+-- Database: `secure_ecom_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_brand`
+-- Table structure for table `sed_industry_brand`
 --
 
-CREATE TABLE `tbl_brand` (
+CREATE TABLE `sed_industry_brand` (
   `brand_id` int(11) NOT NULL,
   `brand_name` varchar(255) NOT NULL,
   `brand_description` text NOT NULL,
-  `publication_status` tinyint(4) NOT NULL
+  `upload_status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_brand`
+-- Dumping data for table `sed_industry_brand`
 --
 
-INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_description`, `publication_status`) VALUES
+INSERT INTO `sed_industry_brand` (`brand_id`, `brand_name`, `brand_description`, `upload_status`) VALUES
 (1, 'Symphony', 'Symphony Desc', 1),
 (2, 'Samsung', 'Samsung desc', 1),
 (3, 'IPhone', 'IPhone Desc<br>', 1),
@@ -48,21 +48,21 @@ INSERT INTO `tbl_brand` (`brand_id`, `brand_name`, `brand_description`, `publica
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_category`
+-- Table structure for table `sed_division`
 --
 
-CREATE TABLE `tbl_category` (
+CREATE TABLE `sed_division` (
   `id` int(11) NOT NULL,
-  `category_name` varchar(100) NOT NULL,
-  `category_description` text NOT NULL,
-  `publication_status` tinyint(4) NOT NULL COMMENT 'Published=1,Unpublished=0'
+  `division_name` varchar(100) NOT NULL,
+  `division_description` text NOT NULL,
+  `upload_status` tinyint(4) NOT NULL COMMENT 'Published=1,Unpublished=0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_category`
+-- Dumping data for table `sed_division`
 --
 
-INSERT INTO `tbl_category` (`id`, `category_name`, `category_description`, `publication_status`) VALUES
+INSERT INTO `sed_division` (`id`, `division_name`, `division_description`, `upload_status`) VALUES
 (1, 'Computer', 'Computer Desc', 1),
 (2, 'Laptop', 'Laptop Desc', 1),
 (3, 'Smartphone', 'Smartphone Desc', 1),
@@ -74,10 +74,10 @@ INSERT INTO `tbl_category` (`id`, `category_name`, `category_description`, `publ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_customer`
+-- Table structure for table `sed_current_customers`
 --
 
-CREATE TABLE `tbl_customer` (
+CREATE TABLE `sed_current_customers` (
   `customer_id` int(11) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
   `customer_email` varchar(100) NOT NULL,
@@ -91,20 +91,20 @@ CREATE TABLE `tbl_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_customer`
+-- Dumping data for table `sed_current_customers`
 --
 
-INSERT INTO `tbl_customer` (`customer_id`, `customer_name`, `customer_email`, `customer_password`, `customer_address`, `customer_city`, `customer_zipcode`, `customer_phone`, `customer_country`, `customer_active`) VALUES
+INSERT INTO `sed_current_customers` (`customer_id`, `customer_name`, `customer_email`, `customer_password`, `customer_address`, `customer_city`, `customer_zipcode`, `customer_phone`, `customer_country`, `customer_active`) VALUES
 (9, 'Christine', 'christine@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '458 Ralph Street', 'DEMO', '12500', '7458450000', 'Afghanistan', 1),
 (10, 'Bob Gardin', 'bobg@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '3556 Denver Avenue', 'Miram Loma', '3006', '7850002580', 'Australia', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_option`
+-- Table structure for table `sed_frame`
 --
 
-CREATE TABLE `tbl_option` (
+CREATE TABLE `sed_frame` (
   `option_id` int(11) NOT NULL,
   `site_logo` varchar(100) NOT NULL,
   `site_favicon` varchar(100) NOT NULL,
@@ -126,19 +126,19 @@ CREATE TABLE `tbl_option` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_option`
+-- Dumping data for table `sed_frame`
 --
 
-INSERT INTO `tbl_option` (`option_id`, `site_logo`, `site_favicon`, `site_copyright`, `site_contact_num1`, `site_contact_num2`, `site_facebook_link`, `site_twitter_link`, `site_google_plus_link`, `site_email_link`, `contact_title`, `contact_subtitle`, `contact_description`, `company_location`, `company_number`, `company_email`, `company_facebook`, `company_twitter`) VALUES
+INSERT INTO `sed_frame` (`option_id`, `site_logo`, `site_favicon`, `site_copyright`, `site_contact_num1`, `site_contact_num2`, `site_facebook_link`, `site_twitter_link`, `site_google_plus_link`, `site_email_link`, `contact_title`, `contact_subtitle`, `contact_description`, `company_location`, `company_number`, `company_email`, `company_facebook`, `company_twitter`) VALUES
 (1, 'logo1.png', 'logo2.png', 'Developed By Rostom Ali', '7865454100', '7865454100', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.plus.google.com', 'https://www.gmail.com', 'Contact Page', 'Contact Page Subtitle', 'Contact Desc..', '565 Blecker\'s Street', '7865454100', 'https://www.gmail.com', 'https://www.facebook.com', 'https://www.twitter.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_order`
+-- Table structure for table `sed_manage_order`
 --
 
-CREATE TABLE `tbl_order` (
+CREATE TABLE `sed_manage_order` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `shipping_id` int(11) NOT NULL,
@@ -148,34 +148,34 @@ CREATE TABLE `tbl_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_order`
+-- Dumping data for table `sed_manage_order`
 --
 
-INSERT INTO `tbl_order` (`order_id`, `customer_id`, `shipping_id`, `payment_id`, `order_total`, `actions`) VALUES
+INSERT INTO `sed_manage_order` (`order_id`, `customer_id`, `shipping_id`, `payment_id`, `order_total`, `actions`) VALUES
 (10, 9, 11, 16, 178250, 'Pending'),
 (11, 10, 12, 17, 23862.5, 'Pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_order_details`
+-- Table structure for table `sed_manage_order_details`
 --
 
-CREATE TABLE `tbl_order_details` (
+CREATE TABLE `sed_manage_order_details` (
   `order_details_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
+  `commodity_id` int(11) NOT NULL,
   `product_name` varchar(255) NOT NULL,
-  `product_price` float NOT NULL,
-  `product_sales_quantity` int(11) NOT NULL,
-  `product_image` varchar(55) DEFAULT NULL
+  `commodity_price` float NOT NULL,
+  `commodity_sales_quantity` int(11) NOT NULL,
+  `commodity_image` varchar(55) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_order_details`
+-- Dumping data for table `sed_manage_order_details`
 --
 
-INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `product_id`, `product_name`, `product_price`, `product_sales_quantity`, `product_image`) VALUES
+INSERT INTO `sed_manage_order_details` (`order_details_id`, `order_id`, `commodity_id`, `product_name`, `commodity_price`, `commodity_sales_quantity`, `commodity_image`) VALUES
 (1, 2, 5, 'Product Five', 10000, 1, NULL),
 (2, 3, 5, 'Product Five', 10000, 4, NULL),
 (3, 3, 3, 'Product Three', 3500, 3, NULL),
@@ -189,20 +189,20 @@ INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `product_id`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_payment`
+-- Table structure for table `sed_transaction_data`
 --
 
-CREATE TABLE `tbl_payment` (
+CREATE TABLE `sed_transaction_data` (
   `payment_id` int(11) NOT NULL,
   `payment_type` varchar(50) NOT NULL,
   `actions` varchar(50) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_payment`
+-- Dumping data for table `sed_transaction_data`
 --
 
-INSERT INTO `tbl_payment` (`payment_id`, `payment_type`, `actions`) VALUES
+INSERT INTO `sed_transaction_data` (`payment_id`, `payment_type`, `actions`) VALUES
 (1, 'cashon', 'pending'),
 (2, 'ssl', 'pending'),
 (3, 'cashon', 'pending'),
@@ -224,31 +224,31 @@ INSERT INTO `tbl_payment` (`payment_id`, `payment_type`, `actions`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_product`
+-- Table structure for table `sed_commodity`
 --
 
-CREATE TABLE `tbl_product` (
-  `product_id` int(11) NOT NULL,
-  `product_title` varchar(255) NOT NULL,
-  `product_short_description` text NOT NULL,
-  `product_long_description` text NOT NULL,
-  `product_image` varchar(255) NOT NULL,
-  `product_price` int(11) NOT NULL,
-  `product_quantity` int(11) NOT NULL,
-  `product_feature` tinyint(4) NOT NULL,
-  `product_category` int(11) NOT NULL,
-  `product_brand` int(11) NOT NULL,
-  `product_author` int(11) NOT NULL,
-  `product_view` int(11) NOT NULL DEFAULT '0',
+CREATE TABLE `sed_commodity` (
+  `commodity_id` int(11) NOT NULL,
+  `commodity_title` varchar(255) NOT NULL,
+  `commodity_summary` text NOT NULL,
+  `commodity_description` text NOT NULL,
+  `commodity_image` varchar(255) NOT NULL,
+  `commodity_price` int(11) NOT NULL,
+  `commodity_quantity` int(11) NOT NULL,
+  `commodity_feature` tinyint(4) NOT NULL,
+  `commodity_category` int(11) NOT NULL,
+  `commodity_industry_brand` int(11) NOT NULL,
+  `commodity_author` int(11) NOT NULL,
+  `commodity_view` int(11) NOT NULL DEFAULT '0',
   `published_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `publication_status` tinyint(4) NOT NULL
+  `upload_status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_product`
+-- Dumping data for table `sed_commodity`
 --
 
-INSERT INTO `tbl_product` (`product_id`, `product_title`, `product_short_description`, `product_long_description`, `product_image`, `product_price`, `product_quantity`, `product_feature`, `product_category`, `product_brand`, `product_author`, `product_view`, `published_date`, `publication_status`) VALUES
+INSERT INTO `sed_commodity` (`commodity_id`, `commodity_title`, `commodity_summary`, `commodity_description`, `commodity_image`, `commodity_price`, `commodity_quantity`, `commodity_feature`, `commodity_category`, `commodity_industry_brand`, `commodity_author`, `commodity_view`, `published_date`, `upload_status`) VALUES
 (1, 'Ultraboost DNA Black Python Shoes', 'Responsive shoes snakeskin acc.', 'Black pythons are sleek, cool and a little bit dangerous. Channel the exotic beauty of the Australian snake and make it yours in these adidas Ultraboost DNA Black Python Shoes. The stretchy knit upper features snakeskin-inspired details. Energy-returning cushioning keeps you comfortable when you\'re on the move.', 'feature-pic1.jpg', 19500, 50, 1, 6, 5, 1, 0, '2017-11-30 14:24:41', 1),
 (2, 'Face Covers 3-Pack', 'Two 3-packs for $30 with code MASKUP. Size M/L is recommended for most adults. This product is not eligible for returns or exchanges.', 'Made with soft, breathable fabric the adidas Face Cover is comfortable, washable and reusable for practicing healthy habits every day. This cover is not a medically-graded mask nor personal protective equipment.', 'feature-pic2.jpg', 1250, 50, 1, 5, 5, 1, 0, '2017-11-30 14:29:04', 1),
 (3, 'Slim Fit Linen Blazer', 'Single-breasted blazer in woven linen fabric. Narrow, notched lapels with decorative buttonhole. Chest pocket, front pockets with flap, and two inner pockets.', 'Single-breasted blazer in woven linen fabric. Narrow, notched lapels with decorative buttonhole. Chest pocket, front pockets with flap, and two inner pockets. Two buttons at front, decorative buttons at cuffs, and vent at back. Lined. Slim Fit – tapered at chest and waist with slightly narrower sleeves for a tailored silhouette.\n\n', 'feature-pic3.jpg', 12500, 35, 1, 5, 4, 1, 0, '2017-11-30 14:38:25', 1),
@@ -261,10 +261,10 @@ INSERT INTO `tbl_product` (`product_id`, `product_title`, `product_short_descrip
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_shipping`
+-- Table structure for table `sed_shippment`
 --
 
-CREATE TABLE `tbl_shipping` (
+CREATE TABLE `sed_shippment` (
   `shipping_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `shipping_name` varchar(50) NOT NULL,
@@ -277,10 +277,10 @@ CREATE TABLE `tbl_shipping` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_shipping`
+-- Dumping data for table `sed_shippment`
 --
 
-INSERT INTO `tbl_shipping` (`shipping_id`, `customer_id`, `shipping_name`, `shipping_email`, `shipping_address`, `shipping_city`, `shipping_country`, `shipping_phone`, `shipping_zipcode`) VALUES
+INSERT INTO `sed_shippment` (`shipping_id`, `customer_id`, `shipping_name`, `shipping_email`, `shipping_address`, `shipping_city`, `shipping_country`, `shipping_phone`, `shipping_zipcode`) VALUES
 (11, 0, 'Christine', 'christinem@gmail.com', '245 Ralph Street', 'Steyr', 'Austria', '7456320000', '12500'),
 (12, 0, 'Bob', 'bob@gmail.com', '3556 Denver Avenue', 'Mira Loma', 'Australia', '7458000025', '3006');
 
@@ -295,14 +295,14 @@ CREATE TABLE `tbl_slider` (
   `slider_title` varchar(255) NOT NULL,
   `slider_image` varchar(255) NOT NULL,
   `slider_link` varchar(255) NOT NULL,
-  `publication_status` tinyint(4) NOT NULL
+  `upload_status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_slider`
 --
 
-INSERT INTO `tbl_slider` (`slider_id`, `slider_title`, `slider_image`, `slider_link`, `publication_status`) VALUES
+INSERT INTO `tbl_slider` (`slider_id`, `slider_title`, `slider_image`, `slider_link`, `upload_status`) VALUES
 (1, 'slider', '2.jpg', 'http://localhost/shop/single/5', 1),
 (2, 'slider 2', '1.jpg', 'http://localhost/shop/single/5', 1),
 (3, 'slider 3', '3.jpg', 'http://localhost/shop/add/slider 3', 1);
@@ -310,10 +310,10 @@ INSERT INTO `tbl_slider` (`slider_id`, `slider_title`, `slider_image`, `slider_l
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_user`
+-- Table structure for table `sed_all_users`
 --
 
-CREATE TABLE `tbl_user` (
+CREATE TABLE `sed_all_users` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `user_email` varchar(255) NOT NULL,
@@ -324,10 +324,10 @@ CREATE TABLE `tbl_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_user`
+-- Dumping data for table `sed_all_users`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `user_name`, `user_email`, `user_password`, `user_role`, `created_time`, `updated_time`) VALUES
+INSERT INTO `sed_all_users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_role`, `created_time`, `updated_time`) VALUES
 (1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1, '2017-11-13 18:31:36', '2017-11-13 18:31:36'),
 (2, 'editor', 'editor@gmail.com', '5aee9dbd2a188839105073571bee1b1f', 2, '2017-11-13 18:31:36', '2017-11-13 18:31:36'),
 (3, 'author', 'author@gmail.com', '02bd92faa38aaa6cc0ea75e59937a1ef', 3, '2017-11-13 18:31:36', '2017-11-13 18:31:36');
@@ -357,57 +357,57 @@ INSERT INTO `user_role` (`role_id`, `role_name`) VALUES
 --
 
 --
--- Indexes for table `tbl_brand`
+-- Indexes for table `sed_industry_brand`
 --
-ALTER TABLE `tbl_brand`
+ALTER TABLE `sed_industry_brand`
   ADD PRIMARY KEY (`brand_id`);
 
 --
--- Indexes for table `tbl_category`
+-- Indexes for table `sed_division`
 --
-ALTER TABLE `tbl_category`
+ALTER TABLE `sed_division`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_customer`
+-- Indexes for table `sed_current_customers`
 --
-ALTER TABLE `tbl_customer`
+ALTER TABLE `sed_current_customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `tbl_option`
+-- Indexes for table `sed_frame`
 --
-ALTER TABLE `tbl_option`
+ALTER TABLE `sed_frame`
   ADD PRIMARY KEY (`option_id`);
 
 --
--- Indexes for table `tbl_order`
+-- Indexes for table `sed_manage_order`
 --
-ALTER TABLE `tbl_order`
+ALTER TABLE `sed_manage_order`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `tbl_order_details`
+-- Indexes for table `sed_manage_order_details`
 --
-ALTER TABLE `tbl_order_details`
+ALTER TABLE `sed_manage_order_details`
   ADD PRIMARY KEY (`order_details_id`);
 
 --
--- Indexes for table `tbl_payment`
+-- Indexes for table `sed_transaction_data`
 --
-ALTER TABLE `tbl_payment`
+ALTER TABLE `sed_transaction_data`
   ADD PRIMARY KEY (`payment_id`);
 
 --
--- Indexes for table `tbl_product`
+-- Indexes for table `sed_commodity`
 --
-ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`product_id`);
+ALTER TABLE `sed_commodity`
+  ADD PRIMARY KEY (`commodity_id`);
 
 --
--- Indexes for table `tbl_shipping`
+-- Indexes for table `sed_shippment`
 --
-ALTER TABLE `tbl_shipping`
+ALTER TABLE `sed_shippment`
   ADD PRIMARY KEY (`shipping_id`);
 
 --
@@ -417,9 +417,9 @@ ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`slider_id`);
 
 --
--- Indexes for table `tbl_user`
+-- Indexes for table `sed_all_users`
 --
-ALTER TABLE `tbl_user`
+ALTER TABLE `sed_all_users`
   ADD PRIMARY KEY (`user_id`);
 
 --
@@ -433,49 +433,49 @@ ALTER TABLE `user_role`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_brand`
+-- AUTO_INCREMENT for table `sed_industry_brand`
 --
-ALTER TABLE `tbl_brand`
+ALTER TABLE `sed_industry_brand`
   MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `tbl_category`
+-- AUTO_INCREMENT for table `sed_division`
 --
-ALTER TABLE `tbl_category`
+ALTER TABLE `sed_division`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `tbl_customer`
+-- AUTO_INCREMENT for table `sed_current_customers`
 --
-ALTER TABLE `tbl_customer`
+ALTER TABLE `sed_current_customers`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `tbl_option`
+-- AUTO_INCREMENT for table `sed_frame`
 --
-ALTER TABLE `tbl_option`
+ALTER TABLE `sed_frame`
   MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `tbl_order`
+-- AUTO_INCREMENT for table `sed_manage_order`
 --
-ALTER TABLE `tbl_order`
+ALTER TABLE `sed_manage_order`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT for table `tbl_order_details`
+-- AUTO_INCREMENT for table `sed_manage_order_details`
 --
-ALTER TABLE `tbl_order_details`
+ALTER TABLE `sed_manage_order_details`
   MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT for table `tbl_payment`
+-- AUTO_INCREMENT for table `sed_transaction_data`
 --
-ALTER TABLE `tbl_payment`
+ALTER TABLE `sed_transaction_data`
   MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
--- AUTO_INCREMENT for table `tbl_product`
+-- AUTO_INCREMENT for table `sed_commodity`
 --
-ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `sed_commodity`
+  MODIFY `commodity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `tbl_shipping`
+-- AUTO_INCREMENT for table `sed_shippment`
 --
-ALTER TABLE `tbl_shipping`
+ALTER TABLE `sed_shippment`
   MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `tbl_slider`
@@ -483,9 +483,9 @@ ALTER TABLE `tbl_shipping`
 ALTER TABLE `tbl_slider`
   MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `tbl_user`
+-- AUTO_INCREMENT for table `sed_all_users`
 --
-ALTER TABLE `tbl_user`
+ALTER TABLE `sed_all_users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `user_role`

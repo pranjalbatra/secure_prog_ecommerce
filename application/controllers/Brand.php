@@ -31,11 +31,11 @@ class Brand extends CI_Controller
         $data                       = array();
         $data['brand_name']         = $this->input->post('brand_name');
         $data['brand_description']  = $this->input->post('brand_description');
-        $data['publication_status'] = $this->input->post('publication_status');
+        $data['upload_status'] = $this->input->post('upload_status');
 
         $this->form_validation->set_rules('brand_name', 'Brand Name', 'trim|required');
         $this->form_validation->set_rules('brand_description', 'Brand Description', 'trim|required');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
+        $this->form_validation->set_rules('upload_status', 'Publication Status', 'trim|required');
 
         if ($this->form_validation->run() == true) {
             $result = $this->brand_model->save_brand_info($data);
@@ -78,11 +78,11 @@ class Brand extends CI_Controller
         $data                       = array();
         $data['brand_name']         = $this->input->post('brand_name');
         $data['brand_description']  = $this->input->post('brand_description');
-        $data['publication_status'] = $this->input->post('publication_status');
+        $data['upload_status'] = $this->input->post('upload_status');
 
         $this->form_validation->set_rules('brand_name', 'Brand Name', 'trim|required');
         $this->form_validation->set_rules('brand_description', 'Brand Description', 'trim|required');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
+        $this->form_validation->set_rules('upload_status', 'Publication Status', 'trim|required');
 
         if ($this->form_validation->run() == true) {
             $result = $this->brand_model->update_brand_info($data, $id);
