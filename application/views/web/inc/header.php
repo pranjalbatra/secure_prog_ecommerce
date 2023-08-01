@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-    <title>Store Website</title>
+    <title>secure_prog_ecommerce</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="<?php echo base_url() ?>assets/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -21,7 +21,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('uploads/'); ?><?php echo get_option('site_logo'); ?>" />
 </head>
 <body>
-    <div class="wrap" style="background-color: skyblue">
+    <div class="wrap" style="background-color: #e0e0e0;">
         <div class="header_top">
             <div class="logo">
                 <a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('uploads/'); ?><?php echo get_option('site_logo'); ?>" alt="" /></a>
@@ -29,7 +29,7 @@
             <div class="header_top_right">
                 <div class="search_box">
                     <form method="get" action="<?php echo base_url('search')?>">
-                        <input type="text" style="background-color: white" placeholder="Search for Products" name="search">
+                        <input type="text" style="background-color: #ffffff; color: #333333;" placeholder="Search for Products" name="search">
                         <input type="submit" value="SEARCH">
                     </form>
                 </div>
@@ -49,7 +49,6 @@
                 <?php } else {
                     ?>
                     <div class="login"><a href="<?php echo base_url('/customer/login'); ?>">Login</a></div>
-
                     <?php
                 }
                 ?>
@@ -59,41 +58,17 @@
         </div>
         <div class="menu">
             <ul id="dc_mega-menu-orange" style="float:left" class="dc_mm-orange">
-                <li class="<?php
-                if ($this->uri->uri_string() == '') {
-                    echo "active";
-                }
-                ?>"><a href="<?php echo base_url('/'); ?>">Home</a></li>
-                <li class="<?php
-                if ($this->uri->uri_string() == 'product') {
-                    echo "active";
-                }
-                ?>"><a href="<?php echo base_url('/product'); ?>">Products</a> </li>
+                <li class="<?php if ($this->uri->uri_string() == '') { echo "active"; } ?>"><a href="<?php echo base_url('/'); ?>" style="color: #ffffff;">Home</a></li>
+                <li class="<?php if ($this->uri->uri_string() == 'product') { echo "active"; } ?>"><a href="<?php echo base_url('/product'); ?>" style="color: #ffffff;">Products</a></li>
                     <?php if ($this->cart->total_items()) { ?>
-                    <li class="<?php
-                    if ($this->uri->uri_string() == 'cart') {
-                        echo "active";
-                    }
-                    ?>"><a href="<?php echo base_url('/cart'); ?>">Cart</a></li>
+                    <li class="<?php if ($this->uri->uri_string() == 'cart') { echo "active"; } ?>"><a href="<?php echo base_url('/cart'); ?>" style="color: #ffffff;">Cart</a></li>
                     <?php } ?>
-                <li class="<?php
-                if ($this->uri->uri_string() == 'contact') {
-                    echo "active";
-                }
-                ?>"><a href="<?php echo base_url('/contact'); ?>">Contact</a> </li>
+                <li class="<?php if ($this->uri->uri_string() == 'contact') { echo "active"; } ?>"><a href="<?php echo base_url('/contact'); ?>" style="color: #ffffff;">Contact</a></li>
                 
                 <?php if(!$this->session->userdata('customer_id')){?>
                 
-                <li class="<?php
-                if ($this->uri->uri_string() == 'customer/login') {
-                    echo "active";
-                }
-                ?>"><a href="<?php echo base_url('/customer/login'); ?>">Login</a> </li>
-                <li class="<?php
-                if ($this->uri->uri_string() == 'customer/register') {
-                    echo "active";
-                }
-                ?>"><a href="<?php echo base_url('/customer/register'); ?>">Register</a> </li>
+                <li class="<?php if ($this->uri->uri_string() == 'customer/login') { echo "active"; } ?>"><a href="<?php echo base_url('/customer/login'); ?>" style="color: #ffffff;">Login</a></li>
+                <li class="<?php if ($this->uri->uri_string() == 'customer/register') { echo "active"; } ?>"><a href="<?php echo base_url('/customer/register'); ?>" style="color: #ffffff;">Register</a></li>
                 
                 <?php }?>
                 

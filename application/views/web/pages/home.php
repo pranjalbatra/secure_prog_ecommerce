@@ -1,8 +1,8 @@
 
 
 
-<div class="main" style="background-color: skyblue">
-    <div class="content" style="background-color: grey">
+<div class="main" style="background-color: black">
+    <div class="content" style="background-color: yellow">
         <div class="content_top">
             <div class="heading">
                 <h3>Feature Products</h3>

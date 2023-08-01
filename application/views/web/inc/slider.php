@@ -1,28 +1,5 @@
 <div class="header_bottom">
-    <div class="header_bottom_left">
-        <?php
-        $popular_posts = $this->web_model->get_all_popular_posts();
-
-        $popular_posts_chunk = array_chunk($popular_posts, 2);
-        foreach ($popular_posts_chunk as $single_popular_chunk) {
-            ?>
-            <div class="section group">
-                <?php foreach($single_popular_chunk as $single_popular){?>
-                <div class="listview_1_of_2 images_1_of_2">
-                    <div class="listimg listimg_2_of_1">
-                        <a href="<?php echo base_url('single/'.$single_popular->product_id);?>"> <img src="<?php echo base_url() ?>uploads/<?php echo $single_popular->product_image?>" alt="" /></a>
-                    </div>
-                    <div class="text list_2_of_1">
-                        <h2><?php echo word_limiter($single_popular->product_title,2) ?></h2>
-                        <p><?php echo word_limiter($single_popular->product_short_description, 5) ?></p>
-                        <div class="button"><span><a href="<?php echo base_url('single/'.$single_popular->product_id);?>">Add to cart</a></span></div>
-                    </div>
-                </div>
-                <?php }?>
-            </div>
-        <?php } ?>
-        <div class="clear"></div>
-    </div>
+    
     <div class="header_bottom_right_images">
         <!-- FlexSlider -->
         <section class="slider">
@@ -41,3 +18,16 @@
     </div>
     <div class="clear"></div>
 </div>	
+<style>
+    .slider-container {
+        display: flex;
+        justify-content: center; /* Horizontally center the slider */
+        align-items: center; /* Vertically center the slider */
+        height: 100vh; /* Set the height of the container to the full viewport height */
+    }
+
+    .header_bottom_right_images {
+        max-width: 800px; /* Adjust the max-width of the slider container as needed */
+        margin: 0 auto; /* Center the slider within the slider-container */
+    }
+</style>

@@ -10,7 +10,7 @@
         </div>
 
         <?php
-        $arr_chunk_product = array_chunk($get_all_product, 4);
+        $arr_chunk_product = array_chunk($get_all_product, 6);
 
         foreach ($arr_chunk_product as $chunk_products) {
             ?>
@@ -45,7 +45,7 @@
     .pagination{}
     .pagination ul{}
     .pagination ul li{float: left}
-    .pagination ul li a{color: #000;padding: 7px 12px;border: 1px solid #ddd;font-size: 18px;}
+    .pagination ul li a{color: #032;padding: 7px 12px;border: 1px solid #ddd;font-size: 18px;}
     .pagination ul li a:hover{background:#ddd;}
     .pagiactive a{background:#ddd;}
 
