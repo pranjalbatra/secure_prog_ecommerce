@@ -83,3 +83,7 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+define('PAYPAL_APP_ID','AW-3ItVtDT6oR1P19ooiyHMRdI00e7tQfgnBMrdtvIypQo_Mxq2_eNobVsT59bxOzfwiDJ5CjGIz7fuu');
+define('PAYPAL_APP_SECRET','EKVV3nefhEL89gI9JMRKNMTjrz2v4j1zbwNGNtP5x5C4Y9ixXAeS7obEkh9S5zBz65YrS-arw8LD5LvI');

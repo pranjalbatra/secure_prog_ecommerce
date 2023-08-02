@@ -23,17 +23,19 @@
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cart_items['name'] ?></td>
                                 <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['commodity_image']) ?>" alt=""/></td>
-                                <td>Rs. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
+                                <td>AUD <?php echo $this->cart->format_number($cart_items['price']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('update/cart'); ?>" method="post">
+                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                                         <input type="number" name="qty" value="<?php echo $cart_items['qty'] ?>"/>
                                         <input type="hidden" name="rowid" value="<?php echo $cart_items['rowid'] ?>"/>
                                         <input type="submit" name="submit" value="Update"/>
                                     </form>
                                 </td>
-                                <td>Rs. <?php echo $this->cart->format_number($cart_items['subtotal']) ?></td>
+                                <td>AUD <?php echo $this->cart->format_number($cart_items['subtotal']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('remove/cart'); ?>" method="post">
+                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                                         <input type="hidden" name="rowid" value="<?php echo $cart_items['rowid'] ?>"/>
                                         <input type="submit" name="submit" value="X"/>
                                     </form>
@@ -46,11 +48,11 @@
                     <table style="float:right;text-align:left;" width="40%" style="font-size: 16px; color: #333;">
                         <tr>
                             <th>Sub Total:</th>
-                            <td>Rs. <?php echo $this->cart->format_number($this->cart->total()) ?></td>
+                            <td>AUD <?php echo $this->cart->format_number($this->cart->total()) ?></td>
                         </tr>
                         <tr>
                             <th>VAT:</th>
-                            <td>Rs. 
+                            <td>AUD 
                                 <?php
                                 $total = $this->cart->total();
                                 $tax = ($total * 15) / 100;
@@ -60,7 +62,7 @@
                         </tr>
                         <tr>
                             <th>Grand Total:</th>
-                            <td>Rs. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
+                            <td>AUD <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
                         </tr>
                     </table>
                     <?php

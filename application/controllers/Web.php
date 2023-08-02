@@ -4,6 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Web extends CI_Controller
 {
+    public function __construct() {
+        parent::__construct();
+        $csrf = array(
+            'name' => $this->security->get_csrf_token_name(),
+            'hash' => $this->security->get_csrf_hash()
+        );
+        $this->csrf = $csrf;
+    }
 
     public function index()
     {
@@ -26,7 +34,9 @@ class Web extends CI_Controller
 
     public function cart()
     {
-        $data                  = array();
+        $data = array(
+            'csrf' => $this->csrf
+        );
         $data['cart_contents'] = $this->cart->contents();
         $this->load->view('web/inc/header');
         $this->load->view('web/pages/cart', $data);
@@ -67,8 +77,10 @@ class Web extends CI_Controller
     }
 
     public function single($id)
-    {
-        $data                       = array();
+    {   
+        $data = array(
+            'csrf' => $this->csrf
+        );
         $data['get_single_product'] = $this->web_model->get_single_product($id);
         $data['get_all_category']   = $this->web_model->get_all_category();
         $this->load->view('web/inc/header');
@@ -111,7 +123,7 @@ class Web extends CI_Controller
 
     public function update_cart()
     {
-        $data          = array();
+        $data = array();
         $data['qty']   = $this->input->post('qty');
         $data['rowid'] = $this->input->post('rowid');
 
@@ -156,10 +168,13 @@ class Web extends CI_Controller
     }
 
     public function customer_login()
-    {
-        $data = array();
+    {   
+     
+        $data = array(
+            'csrf' => $this->csrf
+        );
         $this->load->view('web/inc/header');
-        $this->load->view('web/pages/customer_login');
+        $this->load->view('web/pages/customer_login',$data);
         $this->load->view('web/inc/footer');
     }
 
@@ -378,9 +393,6 @@ class Web extends CI_Controller
             }
 
             if ($payment_method == 'paypal') {
-
-            }
-            if ($payment_method == 'cashon') {
 
             }
 

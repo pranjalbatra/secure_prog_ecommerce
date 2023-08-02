@@ -53,7 +53,7 @@
                             <td><?php echo $i;?></td>
                             <td class="center"><?php echo $single_product->commodity_title;?></td>
                             <td class="center"><img src="<?php echo base_url('uploads/'.$single_product->commodity_image);?>" style="width:200px;height:75px"/></td>
-                            <td class="center">Rs.<?php echo $this->cart->format_number($single_product->commodity_price);?></td>
+                            <td class="center">AUD<?php echo $this->cart->format_number($single_product->commodity_price);?></td>
                             <td class="center"><?php echo $single_product->commodity_quantity;?></td>
                             <td class="center">
                                 <?php if ($single_product->pstatus == 1) { ?>

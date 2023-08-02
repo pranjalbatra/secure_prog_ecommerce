@@ -12,6 +12,8 @@
             </div>
 
             <form action="<?php echo base_url('customer/logincheck');?>" method="post">
+                <!-- CSRF protection -->
+                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                 <input name="customer_email" placeholder="Email Or Account" type="text"/>
                 <input name="customer_password" placeholder=" Password" type="password"/>
                 <p class="note">forgot your passoword  <a href="#">here</a></p>
