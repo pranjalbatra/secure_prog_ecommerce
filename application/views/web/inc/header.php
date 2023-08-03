@@ -150,7 +150,7 @@
         
     </div>
     <footer>
-        &copy; Secure Programming e-commerce 2023. All rights reserved.
+        &copy; Secure Programming Assignment 3 e-commerce platfrom 2023. All rights reserved.
     </footer>
 </body>
 </html>

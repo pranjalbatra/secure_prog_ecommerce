@@ -31,7 +31,7 @@
                                         <input type="submit" name="submit" value="Update"/>
                                     </form>
                                 </td>
-                                <td>Rs. <?php echo $this->cart->format_number($cart_items['subtotal']) ?></td>
+                                <td>AUD. <?php echo $this->cart->format_number($cart_items['subtotal']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('remove/cart'); ?>" method="post">
                                         <input type="hidden" name="rowid" value="<?php echo $cart_items['rowid'] ?>"/>
@@ -46,11 +46,11 @@
                     <table style="float:right;text-align:left;" width="40%" style="font-size: 16px; color: #333;">
                         <tr>
                             <th>Sub Total:</th>
-                            <td>Rs. <?php echo $this->cart->format_number($this->cart->total()) ?></td>
+                            <td>AUD. <?php echo $this->cart->format_number($this->cart->total()) ?></td>
                         </tr>
                         <tr>
                             <th>VAT:</th>
-                            <td>Rs. 
+                            <td>AUD. 
                                 <?php
                                 $total = $this->cart->total();
                                 $tax = ($total * 15) / 100;
