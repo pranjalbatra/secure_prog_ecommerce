@@ -1869,30 +1869,8 @@ body {
 	background-color: #0056b3;
   }
   
-  /* Company Information Styles */
-  .company_address {
-	margin-top: 20px;
-	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
   
-  .company_address h2 {
-	font-size: 24px;
-	color: #007bff;
-	margin-bottom: 20px;
-  }
   
-  .company_address p {
-	font-size: 16px;
-	color: #333;
-	margin-bottom: 10px;
-  }
-  
-  .company_address p span {
-	color: #007bff;
-	cursor: pointer;
-  }
   
   /* Media Queries for Responsive Layout */
   @media only screen and (max-width: 768px) {

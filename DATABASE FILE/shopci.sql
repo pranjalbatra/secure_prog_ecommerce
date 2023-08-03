@@ -117,12 +117,8 @@ CREATE TABLE `sed_frame` (
   `site_email_link` varchar(100) NOT NULL,
   `contact_title` varchar(255) NOT NULL,
   `contact_subtitle` varchar(255) NOT NULL,
-  `contact_description` text NOT NULL,
-  `company_location` varchar(255) NOT NULL,
-  `company_number` varchar(100) NOT NULL,
-  `company_email` varchar(100) NOT NULL,
-  `company_facebook` varchar(100) NOT NULL,
-  `company_twitter` varchar(100) NOT NULL
+  `contact_description` text NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

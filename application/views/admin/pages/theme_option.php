@@ -166,42 +166,7 @@
                             </div>
                         </div> 
                         
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Company Location</label>
-                            <div class="controls">
-                                <textarea class="cleditor" name="company_location" cols="30" rows="8">
-                                    <?php get_option('company_location');?>
-                                </textarea>
-                            </div>
-                        </div>
                         
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Company Phone Number</label>
-                            <div class="controls">
-                                <input class="span6 typeahead" value="<?php get_option('company_number');?>" name="company_number" id="fileInput" type="text"/>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Company Email Address</label>
-                            <div class="controls">
-                                <input class="span6 typeahead" value="<?php get_option('company_email');?>" name="company_email" id="fileInput" type="text"/>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Company Facebook</label>
-                            <div class="controls">
-                                <input class="span6 typeahead" value="<?php get_option('company_facebook');?>" name="company_facebook" id="fileInput" type="text"/>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Company Twitter</label>
-                            <div class="controls">
-                                <input class="span6 typeahead" value="<?php get_option('company_twitter');?>" name="company_twitter" id="fileInput" type="text"/>
-                            </div>
-                        </div>
                         
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">Save changes</button>

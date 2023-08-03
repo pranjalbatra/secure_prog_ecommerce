@@ -32,11 +32,7 @@ class Themeoption extends CI_Controller
         $data['contact_title']         = $this->input->post('contact_title');
         $data['contact_subtitle']      = $this->input->post('contact_subtitle');
         $data['contact_description']   = $this->input->post('contact_description');
-        $data['company_location']      = $this->input->post('company_location');
-        $data['company_number']        = $this->input->post('company_number');
-        $data['company_email']         = $this->input->post('company_email');
-        $data['company_facebook']      = $this->input->post('company_facebook');
-        $data['company_twitter']       = $this->input->post('company_twitter');
+        
 
         $delete_logo    = $this->input->post('delete_logo');
         $delete_favicon = $this->input->post('delete_favicon');
@@ -51,11 +47,7 @@ class Themeoption extends CI_Controller
         $this->form_validation->set_rules('contact_title', 'Product Feature', 'trim');
         $this->form_validation->set_rules('contact_subtitle', 'Publication Status', 'trim|required');
         $this->form_validation->set_rules('contact_description', 'Publication Status', 'trim|required');
-        $this->form_validation->set_rules('company_location', 'Publication Status', 'trim|required');
-        $this->form_validation->set_rules('company_number', 'Publication Status', 'trim|required');
-        $this->form_validation->set_rules('company_email', 'Publication Status', 'trim|required');
-        $this->form_validation->set_rules('company_facebook', 'Publication Status', 'trim|required');
-        $this->form_validation->set_rules('company_twitter', 'Publication Status', 'trim|required');
+        
 
         if (!empty($_FILES['site_logo']['name'])) {
             $config['upload_path']   = './uploads/';
