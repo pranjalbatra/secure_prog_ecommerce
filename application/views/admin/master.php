@@ -94,8 +94,7 @@
                 <li><a href="<?php echo base_url('manage/brand')?>"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage Brand</span></a></li>
                 <li><a href="<?php echo base_url('add/product')?>"><i class="icon-shopping-cart"></i><span class="hidden-tablet"> Add Product</span></a></li>
                 <li><a href="<?php echo base_url('manage/product')?>"><i class="icon-eye-open"></i><span class="hidden-tablet"> Manage Product</span></a></li>
-                <li><a href="<?php echo base_url('add/slider')?>"><i class="icon-font"></i><span class="hidden-tablet"> Add Slider</span></a></li>
-                <li><a href="<?php echo base_url('manage/slider')?>"><i class="icon-picture"></i><span class="hidden-tablet"> Manage Slider</span></a></li>
+                
                 <li><a href="<?php echo base_url('theme/option');?>"><i class="icon-align-justify"></i><span class="hidden-tablet"> Theme Option</span></a></li>
                 <li><a href="<?php echo base_url('manage/order');?>"><i class="icon-calendar"></i><span class="hidden-tablet"> Manage Order</span></a></li>
             </ul>
