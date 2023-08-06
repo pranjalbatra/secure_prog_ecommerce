@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -34,21 +35,21 @@
         }
 
         .search_box {
-            margin-left: 20px;
+            margin-left: 30px;
             display: flex;
             align-items: center;
         }
 
         .search_box input[type="text"] {
             background-color: #ffffff;
-            color: red;
+            color: black;
             padding: 5px 10px;
             border: none;
             border-radius: 3px;
         }
 
         .search_box input[type="submit"] {
-            background-color: #333;
+            background-color: black;
             color: #fff;
             padding: 5px 10px;
             border: none;
@@ -68,7 +69,7 @@
 
         /* Menu styles */
         .menu {
-            background-color: #444;
+            background-color: yellow;
             padding: 10px;
         }
 
@@ -120,7 +121,7 @@
                 <div class="search_box">
                     <form method="get" action="<?php echo base_url('search')?>">
                         <input type="text" placeholder="Search for Products" name="search">
-                        <input type="submit" value="SEARCH">
+                        <input type="submit" value="Find Products">
                     </form>
                 </div>
                 <div class="shopping_cart">
