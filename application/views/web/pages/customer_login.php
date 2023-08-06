@@ -14,7 +14,7 @@
             <form action="<?php echo base_url('customer/logincheck');?>" method="post">
                 <input name="customer_email" placeholder="Email Or Account" type="text"/>
                 <input name="customer_password" placeholder=" Password" type="password"/>
-                <p class="note">forgot your passoword  <a href="#">here</a></p>
+                <p class="note">forgot your password  <a href="#">here</a></p>
                 <div class="buttons"><div><button class="grey">login </button></div></div>
             </form>
         </div>

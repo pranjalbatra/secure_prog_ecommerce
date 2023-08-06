@@ -39,10 +39,20 @@
                                 <div>
                                     <select id="country" name="country" onchange="change_country(this.value)" class="frm-field required" style="font-size: 16px; color: #333; padding: 5px;">
                                         <option value="null">Select a Country</option>         
-                                        <option value="AF">Afghanistan</option>
-                                        <option value="AL">Albania</option>
-                                        <!-- Add more options here -->
-                                        <option value="BD">Bangladesh</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Armenia">Armenia</option>
+                                        <option value="Aruba">Aruba</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Austria">Austria</option>
+                                        <option value="Azerbaijan">Azerbaijan</option>
+                                        <option value="Bahamas">Bahamas</option>
+                                        <option value="Bahrain">Bahrain</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Netherland">Netherlands</option>
+                                        <option value="USA">USA</option>
                                     </select>
                                 </div>		        
 
