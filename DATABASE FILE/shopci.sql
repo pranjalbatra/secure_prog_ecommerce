@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 06, 2023 at 05:53 AM
+-- Generation Time: Aug 06, 2023 at 06:31 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -329,13 +329,6 @@ CREATE TABLE `tbl_slider` (
   `upload_status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tbl_slider`
---
-
-INSERT INTO `tbl_slider` (`slider_id`, `slider_title`, `slider_image`, `slider_link`, `upload_status`) VALUES
-(4, 'Apple Watch', 'Watch1.png', 'http://localhost/shop/single/4', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -500,7 +493,7 @@ ALTER TABLE `sed_transaction_data`
 -- AUTO_INCREMENT for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
-  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_role`
