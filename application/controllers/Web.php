@@ -202,7 +202,7 @@ class Web extends CI_Controller
 
         $this->form_validation->set_rules('customer_name', 'Customer Name', 'trim|required');
         $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[sed_current_customers.customer_email]');
-        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
+        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required|callback_password_check');
         $this->form_validation->set_rules('customer_address', 'Customer Address', 'trim|required');
         $this->form_validation->set_rules('customer_city', 'Customer City', 'trim|required');
         $this->form_validation->set_rules('customer_country', 'Customer Country', 'trim|required');
@@ -289,7 +289,7 @@ class Web extends CI_Controller
 
         $this->form_validation->set_rules('customer_name', 'Customer Name', 'trim|required');
         $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[sed_current_customers.customer_email]');
-        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
+        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required|callback_password_check');
         $this->form_validation->set_rules('customer_address', 'Customer Address', 'trim|required');
         $this->form_validation->set_rules('customer_city', 'Customer City', 'trim|required');
         $this->form_validation->set_rules('customer_country', 'Customer Country', 'trim|required');
@@ -417,6 +417,27 @@ class Web extends CI_Controller
             redirect('checkout');
         }
     }
+
+    public function password_check($pwd)
+    {   
+        if (strlen($pwd) < 8) {
+            $this->form_validation->set_message('password_check', 'Password must have atleast 8 characters!');
+            return FALSE;
+        }
+
+        if (!preg_match("#[0-9]+#", $pwd)) {
+            $this->form_validation->set_message('password_check', 'Password must include at least one number!');
+            return FALSE;
+        }
+
+        if (!preg_match("#[a-zA-Z]+#", $pwd)) {
+            $this->form_validation->set_message('password_check', 'Password must include at least one letter!');
+            return FALSE;
+        }
+
+        return TRUE;
+    }
+
 
     public function pdf($order_id)
     {
