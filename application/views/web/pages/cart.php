@@ -23,7 +23,7 @@
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cart_items['name'] ?></td>
                                 <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['commodity_image']) ?>" alt=""/></td>
-                                <td>Rs. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
+                                <td>AUD. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('update/cart'); ?>" method="post">
                                         <input type="number" name="qty" value="<?php echo $cart_items['qty'] ?>"/>
@@ -60,7 +60,7 @@
                         </tr>
                         <tr>
                             <th>Grand Total:</th>
-                            <td>Rs. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
+                            <td>AUD. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
                         </tr>
                     </table>
                     <?php
