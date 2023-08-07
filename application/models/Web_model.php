@@ -142,7 +142,7 @@ class Web_Model extends CI_Model
     public function get_all_slider_post()
     {
         $this->db->select('*');
-        $this->db->from('sed_slider');
+        $this->db->from('tbl_slider');
         $this->db->where('upload_status', 1);
         $info = $this->db->get();
         return $info->result();

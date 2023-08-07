@@ -172,7 +172,7 @@ class Slider extends CI_Controller
     private function get_image_by_id($id)
     {
         $this->db->select('slider_image');
-        $this->db->from('sed_slider');
+        $this->db->from('tbl_slider');
         $this->db->where('slider_id', $id);
         $info = $this->db->get();
         return $info->row();

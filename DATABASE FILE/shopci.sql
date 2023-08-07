@@ -319,10 +319,10 @@ INSERT INTO `sed_transaction_data` (`payment_id`, `payment_type`, `actions`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sed_slider`
+-- Table structure for table `tbl_slider`
 --
 
-CREATE TABLE `sed_slider` (
+CREATE TABLE `tbl_slider` (
   `slider_id` int(11) NOT NULL,
   `slider_title` varchar(255) NOT NULL,
   `slider_image` varchar(255) NOT NULL,
@@ -415,9 +415,9 @@ ALTER TABLE `sed_transaction_data`
   ADD PRIMARY KEY (`payment_id`);
 
 --
--- Indexes for table `sed_slider`
+-- Indexes for table `tbl_slider`
 --
-ALTER TABLE `sed_slider`
+ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`slider_id`);
 
 --
@@ -491,9 +491,9 @@ ALTER TABLE `sed_transaction_data`
   MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `sed_slider`
+-- AUTO_INCREMENT for table `tbl_slider`
 --
-ALTER TABLE `sed_slider`
+ALTER TABLE `tbl_slider`
   MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --

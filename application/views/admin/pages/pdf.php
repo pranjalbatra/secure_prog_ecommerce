@@ -86,7 +86,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>= <?php echo $order_info->order_total ?> AUD.</td>
+                    <td>= <?php echo $order_info->order_total ?> Rs.</td>
                     </tfoot>
                 </table>
             </div>
