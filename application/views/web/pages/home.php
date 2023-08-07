@@ -2,7 +2,7 @@
 
 
 <div class="main" style="background-color: black">
-    <div class="content" style="background-color: Antiquewhite">
+    <div class="content" style="display:flex;background-color: Antiquewhite">
         <div class="content_top">
             <div class="heading">
                 <h3>Trending Products</h3>

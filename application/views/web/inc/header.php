@@ -19,6 +19,21 @@
             background-color: #e0e0e0;
         }
 
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+            margin: 0 0 100px; /* bottom = footer height */
+        }
+        .footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 80px;
+            width: 100%;
+        }
+
         /* Header styles */
         .header_top {
             background-color: #333;
@@ -157,8 +172,5 @@
         </div>
         
     </div>
-    <footer>
-        &copy; Secure Programming Assignment 3 e-commerce platfrom 2023. All rights reserved.
-    </footer>
 </body>
 </html>
