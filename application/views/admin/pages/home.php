@@ -5,7 +5,7 @@
     <ul class="breadcrumb">
         <li>
             <i class="icon-home"></i>
-            <a href="<?php echo base_url('dashoard')?>">Home</a> 
+            <a href="<?php echo base_url('dashboard')?>">Home</a> 
             <i class="icon-angle-right"></i>
         </li>
         <li><a href="#">Dashboard</a></li>
