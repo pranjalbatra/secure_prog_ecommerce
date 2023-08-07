@@ -102,6 +102,9 @@
 <body>
     <div class="container">
         <div class="login-logo">E-Shop Login Panel</div>
+        <div id="result">
+            <p><?php echo $this->session->flashdata('message');?></p>
+        </div>
         <form class="login-form" action="<?php echo base_url()?>admin_login_check" method="post">
             <label for="user_email">Email</label>
             <input type="text" id="user_email" name="user_email" placeholder="Enter your email">
