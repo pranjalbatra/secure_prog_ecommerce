@@ -23,7 +23,7 @@
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cart_items['name'] ?></td>
                                 <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['commodity_image']) ?>" alt=""/></td>
-                                <td>Rs. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
+                                <td>AUD. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('update/cart'); ?>" method="post">
                                         <input type="number" name="qty" value="<?php echo $cart_items['qty'] ?>"/>
@@ -60,7 +60,7 @@
                         </tr>
                         <tr>
                             <th>Grand Total:</th>
-                            <td>Rs. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
+                            <td>AUD. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
                         </tr>
                     </table>
                     <?php
@@ -71,18 +71,18 @@
             </div>
             <div class="shopping">
                 <div class="shopleft">
-                    <a href="<?php echo base_url('product') ?>"> <img src="<?php echo base_url() ?>assets/web/images/shop.png" alt="" /></a>
+                    <a href="<?php echo base_url('product') ?>"> <button style='font-size: 18px; color: orange; border: none; padding: 10px 20px; cursor: pointer; background-color: red; border-radius: 4px;'>continue shopping</button></a>
                 </div>
                 <div class="shopright">
                     <?php
                     $customer_id = $this->session->userdata('customer_id');
                     if (empty($customer_id)) {
                         ?>
-                        <a href="<?php echo base_url('user_form') ?>"> <img src="<?php echo base_url() ?>assets/web/images/check.png" alt="" /></a>
+                        <a href="<?php echo base_url('user_form') ?>"> <button style='font-size: 24px; color: orange; border: none; padding: 10px 20px; cursor: pointer; background-color: green; border-radius: 4px;'>Check out!</button></a>
                         <?php
                     } elseif (!empty($customer_id)) {
                         ?>
-                        <a href="<?php echo base_url('customer/shipping') ?>"> <img src="<?php echo base_url() ?>assets/web/images/check.png" alt="" /></a>
+                        <a href="<?php echo base_url('customer/shipping') ?>"> <h1 style='font-size: 24px; color: #333;'>Check out!</h1></a>
                         <?php
                     }
                     ?>

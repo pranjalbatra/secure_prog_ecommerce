@@ -98,15 +98,15 @@
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $single_order_details->product_name ?></td>
                                 <td><img src="<?php echo base_url('uploads/'.$single_order_details->commodity_image);?>" style="width:200px;height:100px"/></td>
-                                <td>Rs.<?php echo $this->cart->format_number($single_order_details->commodity_price)?> </td>
+                                <td>AUD.<?php echo $this->cart->format_number($single_order_details->commodity_price)?> </td>
                                 <td><?php echo $single_order_details->commodity_sales_quantity ?></td>
-                                <td>Rs.<?php echo $this->cart->format_number($single_order_details->commodity_price * $single_order_details->commodity_sales_quantity) ?></td>
+                                <td>AUD.<?php echo $this->cart->format_number($single_order_details->commodity_price * $single_order_details->commodity_sales_quantity) ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
                     <tfooter>
                         <td colspan="5">Total Amount</td>
-                        <td>= Rs.<?php echo $this->cart->format_number($order_info->order_total)?> </td>
+                        <td>= AUD.<?php echo $this->cart->format_number($order_info->order_total)?> </td>
                     </tfooter>
                 </table>            
             </div>
