@@ -25,7 +25,7 @@ class AdminLogin extends CI_Controller
         if ($this->form_validation->run() == true) {
             $data                  = array();
             $data['user_email']    = $this->input->post('user_email');
-            $data['user_password'] = md5($this->input->post('user_password'));
+            $data['user_password'] = md5("SecUrE@sAL1".md5($this->input->post('user_password')));
 
             $result = $this->adminlogin_model->admin_login_check($data);
 
