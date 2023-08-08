@@ -1,5 +1,7 @@
 <?php
-
+/*
+This control has been created as a log in form for the admin pages and it is resticted to users with admin authrization. It captures user email, name and id of admin.
+*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
