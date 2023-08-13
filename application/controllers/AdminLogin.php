@@ -1,5 +1,8 @@
 <?php
-
+/*
+This control has been created as a log in form for the admin pages and it is resticted to users with admin authrization. It captures user email, name and id of admin.
+Further this controller verifies the login details entered by the admin to prevent un authorized users to access the platform.
+*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class AdminLogin extends CI_Controller

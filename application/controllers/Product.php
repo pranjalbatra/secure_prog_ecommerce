@@ -1,5 +1,10 @@
 <?php
-
+/*
+This controller has multiple functions which helps us to manager a product on the e-commerce platform, manage a product etc.
+It also helps us to save a product's details like name, description, title etc.
+It reduces time and effort by seamless addition and deletion of new products from the e-commerce platform.
+The products can be published and unpublished accordingly based on admin's and orgaizations requriements.
+*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Product extends CI_Controller

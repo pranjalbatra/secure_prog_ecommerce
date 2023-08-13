@@ -1,5 +1,8 @@
 <?php
-
+/*
+The following controller helps to us to manager orders and capture order information like customer id, shopping id, payment id, order id etc.
+Moreover it also captures user details
+*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class ManageOrder extends CI_Controller

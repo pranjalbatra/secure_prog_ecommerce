@@ -1,5 +1,10 @@
 <?php
-
+/*
+This controller has multiple functions which helps us to add a brand on the e-commerce platform, manage a brand etc.
+It also helps us to save a brand's details like brand_name, brand_description and the status of upload.
+It reduces time and effort by seamless addition and deletion of new brands from the e-commerce system.
+The brand can be published and unpublished accordingly based on admin's and orgaizations requriements.
+*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Brand extends CI_Controller

@@ -1,5 +1,10 @@
 <?php
-
+/*
+This controller has multiple functions which helps us to add a category on the e-commerce platform, to manage a prodcut.
+It also helps us to save a category's details like manage category, add catrgory, and other critical funcations mentioned below.
+It reduces time and effort by seamless addition and deletion of new categories from the e-commerce system.
+The categories can be published and unpublished accordingly based on admin's and e-commerce requriements.
+*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Category extends CI_Controller
