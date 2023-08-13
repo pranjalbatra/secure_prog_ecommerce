@@ -106,6 +106,19 @@
             <p><?php echo $this->session->flashdata('message');?></p>
         </div>
         <form class="login-form" action="<?php echo base_url()?>admin_login_check" method="post">
+        <?php
+
+        $csrf = array(
+
+        'name' => $this->security->get_csrf_token_name(),
+
+        'hash' => $this->security->get_csrf_hash()
+
+        );
+
+        ?>
+
+    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
             <label for="user_email">Email</label>
             <input type="text" id="user_email" name="user_email" placeholder="Enter your email">
 

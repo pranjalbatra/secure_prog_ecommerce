@@ -15,6 +15,19 @@
                     </div>
                     <div class="add-cart">
                         <form action="<?php echo base_url('save/cart');?>" method="post">
+                        <?php
+
+                        $csrf = array(
+
+                        'name' => $this->security->get_csrf_token_name(),
+
+                        'hash' => $this->security->get_csrf_hash()
+
+                        );
+
+                        ?>
+
+                            <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
                             <input type="number" class="buyfield" name="qty" value="1"/>
                             <input type="hidden" class="buyfield" name="commodity_id" value="<?php echo $get_single_product->commodity_id?>"/>
                             <input type="submit" class="buysubmit" name="submit" value="Buy Now"/>

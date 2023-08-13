@@ -65,6 +65,22 @@
             </div>
         <?php } ?>
         <form method="post" action="<?php echo base_url('customer/save'); ?>">
+
+            <?php
+
+            $csrf = array(
+
+            'name' => $this->security->get_csrf_token_name(),
+
+            'hash' => $this->security->get_csrf_hash()
+
+            );
+
+            ?>
+
+            <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+
+
             <div class="form-group">
                 <label for="customer_name">Name:</label>
                 <input type="text" name="customer_name" id="customer_name" placeholder="Enter Your Name" required>

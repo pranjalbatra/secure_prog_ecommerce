@@ -16,6 +16,21 @@
                 <div class="contact-form">
                     <h2>Contact Us</h2>
                     <form>
+
+
+                    <?php
+
+                    $csrf = array(
+
+                    'name' => $this->security->get_csrf_token_name(),
+
+                    'hash' => $this->security->get_csrf_hash()
+
+                    );
+
+                    ?>
+
+                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                         <div>
                             <span><label>NAME</label></span>
                             <span><input type="text" value=""></span>

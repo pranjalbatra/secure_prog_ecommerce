@@ -12,6 +12,19 @@
                 <p><?php echo $this->session->flashdata('message'); ?></p>
             </div>
             <form method="post" action="<?php echo base_url('customer/save/shipping/address');?>">
+            <?php
+
+            $csrf = array(
+
+            'name' => $this->security->get_csrf_token_name(),
+
+            'hash' => $this->security->get_csrf_hash()
+
+            );
+
+            ?>
+
+                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
                 <table>
                     <tbody>
                         <tr>

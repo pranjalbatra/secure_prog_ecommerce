@@ -33,6 +33,19 @@
             </div>
             <div class="box-content">
                 <form class="form-horizontal" action="<?php echo base_url('update/brand/'.$brand_info_by_id->brand_id)?>" method="post">
+                <?php
+
+                $csrf = array(
+
+                'name' => $this->security->get_csrf_token_name(),
+
+                'hash' => $this->security->get_csrf_hash()
+
+                );
+
+                ?>
+
+                    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
                     <fieldset>
 
                         <div class="control-group">

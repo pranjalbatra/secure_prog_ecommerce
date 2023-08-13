@@ -3,6 +3,19 @@
         <div class="register_account" style="text-align:center;display:inline-block;float: none">
             <h3 style="font-size: 24px; color: #333;">Register New Account</h3>
             <form>
+            <?php
+
+            $csrf = array(
+
+            'name' => $this->security->get_csrf_token_name(),
+
+            'hash' => $this->security->get_csrf_hash()
+
+            );
+
+            ?>
+
+                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
                 <table>
                     <tbody>
                         <tr>

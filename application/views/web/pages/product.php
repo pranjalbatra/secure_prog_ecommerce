@@ -21,7 +21,7 @@
 
 
 <div class="main">
-    <div class="content" style="display:flex">
+    <div class="content" >
         <div class="content_top">
             <div class="heading">
                 <h3>Shop now for the latest products!!</h3>

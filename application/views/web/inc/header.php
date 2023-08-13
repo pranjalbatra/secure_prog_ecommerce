@@ -135,6 +135,19 @@
             <div class="header_top_right">
                 <div class="search_box">
                     <form method="get" action="<?php echo base_url('search')?>">
+                    <?php
+
+                    $csrf = array(
+
+                    'name' => $this->security->get_csrf_token_name(),
+
+                    'hash' => $this->security->get_csrf_hash()
+
+                    );
+
+                    ?>
+
+                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
                         <input type="text" placeholder="Search for Products" name="search">
                         <input type="submit" value="Find Products">
                     </form>

@@ -14,6 +14,19 @@
             </div>
             
             <form action="<?php echo base_url('customer/shipping/login');?>" method="post">
+            <?php
+
+            $csrf = array(
+
+            'name' => $this->security->get_csrf_token_name(),
+
+            'hash' => $this->security->get_csrf_hash()
+
+            );
+
+            ?>
+
+                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
                 <input name="customer_email" placeholder="Enter Your Email" type="text"/>
                 <input name="customer_password" placeholder="Enter Your Password" type="password"/>
                 <p class="note">If you forgot your password just enter your email and click <a href="#">here</a></p>
@@ -30,6 +43,19 @@
                 <p><?php echo $this->session->flashdata('message'); ?></p>
             </div>
             <form method="post" action="<?php echo base_url('customer/shipping/register');?>">
+            <?php
+
+            $csrf = array(
+
+            'name' => $this->security->get_csrf_token_name(),
+
+            'hash' => $this->security->get_csrf_hash()
+
+            );
+
+            ?>
+
+                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />          
                 <table>
                     <tbody>
                         <tr>
