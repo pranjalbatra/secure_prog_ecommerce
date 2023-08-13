@@ -13,7 +13,7 @@ Implemented a custom security helper function `application/helpers/security_help
 #### 1. Buffer overflow protection
 #### 2. Command Injection prevention (sql and xss)
 #### 3. CSRF protection (cross-site request forgery)
-#### 4. Authentication attack prevention (MFA / 2 factor auth , hashed password + salt)
+#### 4. Authentication attack prevention (using cryptographically hashed password encryption with salt)
 ### 5. Other security measures for future
 #### MFA, DDos protection, PCI DSS for storing cards, Brute force protection , SSL certificates
 
