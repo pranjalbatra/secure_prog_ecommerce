@@ -15,11 +15,12 @@ Implemented a custom security helper function `application/helpers/security_help
 #### 3. CSRF protection (cross-site request forgery)
 #### 4. Authentication attack prevention (using cryptographically hashed password encryption with salt)
 ### 5. Other security measures for future
-#### MFA, DDos protection, PCI DSS for storing cards, Brute force protection , SSL certificates
+#### MFA, DDos protection, PCI DSS for storing cards, Brute force protection, SSL certificates
 
-## SECURITY SETTINGS
+## SECURITY CONFIGURATION
 #### 1. SET $config['global_xss_filtering'] = TRUE; [ /application/config/config.php]
-#### 2. CSRF $config['csrf_protection'] = TRUE; protection [ /application/config/config.php] 
+#### 2. CSRF $config['csrf_protection'] = TRUE; protection [ /application/config/config.php]
+#### 3. Use the helper function sanitizeData($input_array) to sanitize user input data 
 
 
 ## List of References
@@ -31,3 +32,6 @@ Implemented a custom security helper function `application/helpers/security_help
 #### [6]H. A. Noman and O. M. F. Abu-Sharkh, “Code Injection Attacks in Wireless-Based Internet of Things (IoT): A Comprehensive Review and Practical Implementations,” Sensors, vol. 23, no. 13, p. 6067, Jun. 2023, doi: 10.3390/s23136067.
 #### [7]H. Dehariya, P. Kumar Shukla, and M. Ahirwar, “A Survey on Detection and Prevention Techniques for SQL Injection Attacks,” International Journal of Wireless and Microwave Technologies, vol. 6, no. 6, pp. 72–79, Nov. 2016.
 #### [8]user4419336, “Login MD5 in codeigniter,” Stack Overflow, Nov. 11, 2015. https://stackoverflow.com/questions/33645760/login-md5-in-codeigniter (accessed Aug. 02, 2023).
+
+## YouTube Link of Group Presentation
+#### https://www.youtube.com/watch?v=dDyDanl1OTM
