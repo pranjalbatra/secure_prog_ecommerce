@@ -69,6 +69,23 @@
                                 <td>
 
                                     <form action="<?php echo base_url('remove/cart'); ?>" method="post">
+                                    <?php
+
+                                            $csrf = array(
+
+                                            'name' => $this->security->get_csrf_token_name(),
+
+                                            'hash' => $this->security->get_csrf_hash()
+
+                                            );
+
+                                        ?>
+
+                                
+
+                                
+
+                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
                                         <input type="hidden" name="rowid" value="<?php echo $cart_items['rowid'] ?>"/>
 
