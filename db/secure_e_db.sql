@@ -16,9 +16,7 @@ CREATE TABLE `sed_all_users` (
 
 
 INSERT INTO `sed_all_users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_role`, `created_time`, `updated_time`) VALUES
-(1, 'admin', 'admin@gmail.com', '76c6500023d898c9941090261d1d439d', 1, '2023-08-01 14:44:44', '2023-08-01 14:44:44'),
-(1, 'editor', 'editor@gmail.com', '76c6500023d898c9941090261d1d439d', 2, '2023-08-01 14:44:44', '2023-08-01 14:44:44'),
-(1, 'author', 'author@gmail.com', '76c6500023d898c9941090261d1d439d', 3, '2023-08-01 14:44:44', '2023-08-01 14:44:44');
+(1, 'admin', 'admin@gmail.com', '76c6500023d898c9941090261d1d439d', 1, '2023-08-01 14:44:44', '2023-08-01 14:44:44');
 
 
 
@@ -119,7 +117,7 @@ CREATE TABLE `sed_frame` (
 
 
 INSERT INTO `sed_frame` (`option_id`, `site_logo`, `site_favicon`, `site_copyright`, `site_contact_num1`, `site_contact_num2`, `site_facebook_link`, `site_twitter_link`, `site_google_plus_link`, `site_email_link`, `contact_title`, `contact_subtitle`, `contact_description`, `company_location`, `company_number`, `company_email`, `company_facebook`, `company_twitter`) VALUES
-(1, 'NewLogo1.png', 'NewLogo2.png', 'Developed By Secure Programming Team 3', '0000000000', '0000000000', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.plus.google.com', 'https://www.gmail.com', 'Please leave your review', 'It's really important to us', '                                                                        Contact Description', '565 Blecker\'s Street', '7865454100', 'https://www.gmail.com', 'https://www.facebook.com', 'https://www.twitter.com');
+(1, 'NewLogo1.png', 'NewLogo2.png', 'Developed By Secure Programming Team 3', '0000000000', '0000000000', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.plus.google.com', 'https://www.gmail.com', 'Please leave your review', 'Its really important to us', ' Contact Description', '565 Bleckers Street', '7865454100', 'https://www.gmail.com', 'https://www.facebook.com', 'https://www.twitter.com');
 
 -- --------------------------------------------------------
 
@@ -139,13 +137,13 @@ CREATE TABLE `sed_industry_brand` (
 --
 
 INSERT INTO `sed_industry_brand` (`brand_id`, `brand_name`, `brand_description`, `upload_status`) VALUES
-(2, 'Samsung', '                                                                        Samsung Products', 1),
-(3, 'Apple', '                                                                                                            Apple Products                                                                                                ', 1),
-(4, 'H&M', '                                    H&amp;M Products', 1),
-(5, 'Adidas', '                                    Adidas Products', 1),
-(7, 'Nike', '                                                                        Nike Products                                ', 1),
+(2, 'Samsung', ' Samsung Products', 1),
+(3, 'Apple', '  Apple Products  ', 1),
+(4, 'H&M', ' H&amp;M Products', 1),
+(5, 'Adidas', '  Adidas Products', 1),
+(7, 'Nike', '  Nike Products   ', 1),
 (8, 'Zara', 'Clothing and Accessories', 1),
-(9, 'Lacoste', '                                    Clothing and Footwear Products                                ', 1),
+(9, 'Lacoste', '   Clothing and Footwear Products ', 1),
 (10, 'Roush', 'Footwear&nbsp; Products', 1),
 (11, 'Pigeon', 'Home and Living Products', 1),
 (12, 'D-DECOR', 'Furniture Products', 1);
@@ -452,6 +450,3 @@ ALTER TABLE `user_role`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
