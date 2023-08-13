@@ -48,7 +48,7 @@
 
                                 <td><img src="<?php echo base_url('uploads/' . $cart_items['options']['commodity_image']) ?>" alt=""/></td>
 
-                                <td>Rs. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
+                                <td>AUD. <?php echo $this->cart->format_number($cart_items['price']) ?></td>
 
                                 <td>
 
@@ -122,7 +122,7 @@
 
                             <th>Grand Total:</th>
 
-                            <td>Rs. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
+                            <td>AUD. <?php echo $this->cart->format_number($tax + $this->cart->total()); ?> </td>
 
                         </tr>
 

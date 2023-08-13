@@ -1,31 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Aug 06, 2023 at 06:51 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `secure_ecom_db`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sed_all_users`
---
 
 CREATE TABLE `sed_all_users` (
   `user_id` int(11) NOT NULL,
@@ -37,20 +13,15 @@ CREATE TABLE `sed_all_users` (
   `updated_time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `sed_all_users`
---
+
 
 INSERT INTO `sed_all_users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_role`, `created_time`, `updated_time`) VALUES
-(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1, '2017-11-13 18:31:36', '2017-11-13 18:31:36'),
-(2, 'editor', 'editor@gmail.com', '5aee9dbd2a188839105073571bee1b1f', 2, '2017-11-13 18:31:36', '2017-11-13 18:31:36'),
-(3, 'author', 'author@gmail.com', '02bd92faa38aaa6cc0ea75e59937a1ef', 3, '2017-11-13 18:31:36', '2017-11-13 18:31:36');
+(1, 'admin', 'admin@gmail.com', '76c6500023d898c9941090261d1d439d', 1, '2023-08-01 14:44:44', '2023-08-01 14:44:44'),
+(1, 'editor', 'editor@gmail.com', '76c6500023d898c9941090261d1d439d', 2, '2023-08-01 14:44:44', '2023-08-01 14:44:44'),
+(1, 'author', 'author@gmail.com', '76c6500023d898c9941090261d1d439d', 3, '2023-08-01 14:44:44', '2023-08-01 14:44:44');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `sed_commodity`
---
+
 
 CREATE TABLE `sed_commodity` (
   `commodity_id` int(11) NOT NULL,
@@ -69,9 +40,6 @@ CREATE TABLE `sed_commodity` (
   `upload_status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `sed_commodity`
---
 
 INSERT INTO `sed_commodity` (`commodity_id`, `commodity_title`, `commodity_summary`, `commodity_description`, `commodity_image`, `commodity_price`, `commodity_quantity`, `commodity_feature`, `commodity_category`, `commodity_industry_brand`, `commodity_author`, `commodity_view`, `published_date`, `upload_status`) VALUES
 (10, 'Iphone 14', '                                                                                                                                                Iphone 14 6.1\" 128GB (Black)                                ', '                                    <font size=\"2\">Iphone 14 is a 6.1 inch display smartphone with all day a battery life and great camera to capture stunning photos in low light and bright light with new dual camera system.</font><div style=\"\"><p style=\"box-sizing: border-box; line-height: var(--typography-p-lineHeight__1yqyf5p1w); font-family: Roboto, arial, sans-serif; background-color: rgb(255, 255, 255);\"></p><ul><li><font size=\"2\">6.7-inch Super Retina XDR display<font style=\"box-sizing: border-box;\">1</font></font></li><li><font size=\"2\">Advanced camera system for better photos in any light</font></li><li><font size=\"2\">Cinematic mode now in 4K Dolby Vision up to 30 fps</font></li><li><font size=\"2\">Action mode for smooth, steady, hand-held videos</font></li><li><font size=\"2\">A vital safety feature — Crash Detection</font></li><li><font size=\"2\">All-day battery life and up to 26 hours of video playback</font></li><li><font size=\"2\">A15 Bionic chip with 5-core GPU for lightning-fast performance</font></li></ul><p></p></div>                                ', 'Iphone141.png', 1399, 14, 1, 3, 3, 1, 0, '2023-08-01 11:37:58', 1),
@@ -84,11 +52,7 @@ INSERT INTO `sed_commodity` (`commodity_id`, `commodity_title`, `commodity_summa
 (17, 'Airpods 3rd Generation', '<p class=\"MsoNormal\" style=\"margin: 0cm; font-family: Calibri, sans-serif;\"><font size=\"2\">AirPods (3rd generation) with MagSafe Charging Case</font><span style=\"font-size: 12pt;\"><o:p></o:p></span></p>', '<ul style=\"\"><li style=\"\"><span style=\"font-family: Calibri, sans-serif;\"><font size=\"2\">AirPods (3rd generation) with MagSafe Charging Case.</font></span></li><li style=\"\"><span style=\"font-family: Calibri, sans-serif;\"><font size=\"2\">Sweat and water resistant</font></span></li><li style=\"\"><span style=\"font-family: Calibri, sans-serif;\"><font size=\"2\">Active noise cancellation and adaptive transparency</font></span></li></ul>', 'Airpods.png', 399, 20, 1, 7, 3, 1, 0, '2023-08-03 12:53:26', 1),
 (18, 'Iphone 13', 'Iphone 13 6.1\" 128GB (Black)', '<font size=\"2\">Iphone 13 is a 6.1 inch display smartphone with all day a battery life and great camera to capture stunning photos in low light and bright light with new dual camera system.</font><div><p style=\"box-sizing: border-box; line-height: var(--typography-p-lineHeight__1yqyf5p1w); font-family: Roboto, arial, sans-serif; background-color: rgb(255, 255, 255);\"></p><ul><li><font size=\"2\">6.1-inch Super Retina XDR display<font style=\"box-sizing: border-box;\">1</font></font></li><li><font size=\"2\">Advanced camera system for better photos in any light</font></li><li><font size=\"2\">Cinematic mode now in 4K Dolby Vision up to 30 fps</font></li><li><font size=\"2\">Action mode for smooth, steady, hand-held videos</font></li><li><font size=\"2\">A vital safety feature — Crash Detection</font></li><li><font size=\"2\">All-day battery life and up to 26 hours of video playback</font></li><li><font size=\"2\">A15 Bionic chip with 5-core GPU for lightning-fast performance</font></li></ul></div>', 'Iphone141.png', 999, 5, 1, 3, 3, 1, 0, '2023-08-06 04:50:24', 1);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `sed_current_customers`
---
 
 CREATE TABLE `sed_current_customers` (
   `customer_id` int(11) NOT NULL,
@@ -103,20 +67,14 @@ CREATE TABLE `sed_current_customers` (
   `customer_active` tinyint(4) NOT NULL COMMENT 'Active=1,Unactive=0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `sed_current_customers`
---
+
 
 INSERT INTO `sed_current_customers` (`customer_id`, `customer_name`, `customer_email`, `customer_password`, `customer_address`, `customer_city`, `customer_zipcode`, `customer_phone`, `customer_country`, `customer_active`) VALUES
-(9, 'Christine', 'christine@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '458 Ralph Street', 'DEMO', '12500', '7458450000', 'Afghanistan', 1),
-(10, 'Bob Gardin', 'bobg@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '3556 Denver Avenue', 'Miram Loma', '3006', '7850002580', 'Australia', 1),
-(11, 'N', 'abc@gmail.com', '900150983cd24fb0d6963f7d28e17f72', 'Airport Adelaide', 'Adl', '1000', '00', 'Afghanistan', 0);
+(9, 'Nihal', 'Nih@gmail.com', '76c6500023d898c9941090261d1d439d', '105 Rundle Street', 'Adelaide', '5000', '0456789012', 'Australia', 1),
+(10, 'Xiaolan wzt', 'Alicewzt@gmail.com', '76c6500023d898c9941090261d1d439d', '151 city road', 'Melbourne', '3006', '0456712345', 'Australia', 0),
+(11, 'Pranjal Geng', 'pgone@gmail.com', '76c6500023d898c9941090261d1d439d', '888 glenelg jetty', 'Adelaide', '5023', '0450987234', 'Australia', 1);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `sed_division`
---
 
 CREATE TABLE `sed_division` (
   `id` int(11) NOT NULL,
@@ -125,9 +83,6 @@ CREATE TABLE `sed_division` (
   `upload_status` tinyint(4) NOT NULL COMMENT 'Published=1,Unpublished=0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `sed_division`
---
 
 INSERT INTO `sed_division` (`id`, `division_name`, `division_description`, `upload_status`) VALUES
 (1, 'Computer', '                                    Computer Products', 1),
@@ -138,11 +93,7 @@ INSERT INTO `sed_division` (`id`, `division_name`, `division_description`, `uplo
 (7, 'Accessories', '                                    Accessorie Products', 1),
 (8, 'Home and Living', 'Lifestyle Products', 1);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `sed_frame`
---
 
 CREATE TABLE `sed_frame` (
   `option_id` int(11) NOT NULL,
@@ -165,12 +116,10 @@ CREATE TABLE `sed_frame` (
   `company_twitter` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `sed_frame`
---
+
 
 INSERT INTO `sed_frame` (`option_id`, `site_logo`, `site_favicon`, `site_copyright`, `site_contact_num1`, `site_contact_num2`, `site_facebook_link`, `site_twitter_link`, `site_google_plus_link`, `site_email_link`, `contact_title`, `contact_subtitle`, `contact_description`, `company_location`, `company_number`, `company_email`, `company_facebook`, `company_twitter`) VALUES
-(1, 'NewLogo1.png', 'NewLogo2.png', 'Developed By Secure Programming Team 3', '0000000000', '0000000000', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.plus.google.com', 'https://www.gmail.com', 'Contact Page', 'Contact Page Subtitle', '                                                                        Contact Description', '565 Blecker\'s Street', '7865454100', 'https://www.gmail.com', 'https://www.facebook.com', 'https://www.twitter.com');
+(1, 'NewLogo1.png', 'NewLogo2.png', 'Developed By Secure Programming Team 3', '0000000000', '0000000000', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.plus.google.com', 'https://www.gmail.com', 'Please leave your review', 'It's really important to us', '                                                                        Contact Description', '565 Blecker\'s Street', '7865454100', 'https://www.gmail.com', 'https://www.facebook.com', 'https://www.twitter.com');
 
 -- --------------------------------------------------------
 
@@ -278,8 +227,8 @@ CREATE TABLE `sed_shippment` (
 --
 
 INSERT INTO `sed_shippment` (`shipping_id`, `customer_id`, `shipping_name`, `shipping_email`, `shipping_address`, `shipping_city`, `shipping_country`, `shipping_phone`, `shipping_zipcode`) VALUES
-(11, 0, 'Christine', 'christinem@gmail.com', '245 Ralph Street', 'Steyr', 'Austria', '7456320000', '12500'),
-(12, 0, 'Bob', 'bob@gmail.com', '3556 Denver Avenue', 'Mira Loma', 'Australia', '7458000025', '3006');
+(11, 0, 'Nihal', 'Nih@gmail.com', '105 Rundle Street', 'Adelaide', 'Australia', '0456789012', '5000'),
+(12, 0, 'Xiaolan wzt', 'Alicewzt@gmail.com', '151 city road', 'Melbourne', 'Australia', '7458000025', '3006');
 
 -- --------------------------------------------------------
 
