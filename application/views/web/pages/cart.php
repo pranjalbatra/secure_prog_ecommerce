@@ -53,6 +53,23 @@
                                 <td>
 
                                     <form action="<?php echo base_url('update/cart'); ?>" method="post">
+                                    <?php
+
+                                            $csrf = array(
+
+                                            'name' => $this->security->get_csrf_token_name(),
+
+                                            'hash' => $this->security->get_csrf_hash()
+
+                                            );
+
+                                        ?>
+
+                                
+
+                                
+
+                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
                                         <input type="number" name="qty" value="<?php echo $cart_items['qty'] ?>"/>
 
