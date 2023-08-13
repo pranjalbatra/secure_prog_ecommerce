@@ -17,7 +17,8 @@
 #### 1. SET $config['global_xss_filtering'] = TRUE; [ /application/config/config.php]
 #### 2. CSRF protection [ /application/config/config.php] 
 
-## List of Reference
+
+## List of References
 #### [1]angel jude suarez, “[COMPLETE] E Commerce In CodeIgniter With Source Code,” Itsourcecode.com, Oct. 06, 2022. https://itsourcecode.com/free-projects/php-project/complete-e-commerce-in-codeigniter-with-source-code/ (accessed Jul. 18, 2023).
 #### [2]b4tch, “Message: Return type of CI_Session_files_driver::open($save_path, $name) should either be compatible with,” Stack Overflow, Feb. 16, 2022. https://stackoverflow.com/questions/70508122/message-return-type-of-ci-session-files-driveropensave-path-name-should (accessed Jul. 19, 2023).
 #### [3]zanderwar, “Creation of dynamic property CI_URI::$config is deprecated,” Stack Overflow, Jan. 15, 2023. https://stackoverflow.com/questions/75122899/creation-of-dynamic-property-ci-uriconfig-is-deprecated (accessed Jul. 19, 2023).
@@ -25,3 +26,4 @@
 #### [5]V. K, “MySQL injection protection and vulnerability signs using PHP,” Stack Overflow, Feb. 13, 2009. https://stackoverflow.com/questions/544239/mysql-injection-protection-and-vulnerability-signs-using-php (accessed Jul. 19, 2023).
 #### [6]H. A. Noman and O. M. F. Abu-Sharkh, “Code Injection Attacks in Wireless-Based Internet of Things (IoT): A Comprehensive Review and Practical Implementations,” Sensors, vol. 23, no. 13, p. 6067, Jun. 2023, doi: 10.3390/s23136067.
 #### [7]H. Dehariya, P. Kumar Shukla, and M. Ahirwar, “A Survey on Detection and Prevention Techniques for SQL Injection Attacks,” International Journal of Wireless and Microwave Technologies, vol. 6, no. 6, pp. 72–79, Nov. 2016.
+#### [8]user4419336, “Login MD5 in codeigniter,” Stack Overflow, Nov. 11, 2015. https://stackoverflow.com/questions/33645760/login-md5-in-codeigniter (accessed Aug. 02, 2023).
